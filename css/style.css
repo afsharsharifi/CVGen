@@ -5,11 +5,16 @@
 }
 
 @font-face {
-    font-family: 'Comfortaa';
-    src: url('../fonts/en/Comfortaa/Comfortaa-SemiBold.ttf');
+    font-family: 'Kamran';
+    src: url('../fonts/fa/B-Kamran/B-Kamran_0.ttf');
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/en/Roboto/Roboto-Medium.ttf');
+    font-family: 'Dirooz';
+    src: url('../fonts/fa/Dirooz/Dirooz.ttf');
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/fa/Vazir/Vazir.ttf');
 }
