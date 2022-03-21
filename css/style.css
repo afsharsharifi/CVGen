@@ -41,7 +41,7 @@ body {
     border: none;
     border-radius: 50%;
     font-size: 16pt;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
 }
@@ -63,7 +63,7 @@ body {
 .header-user-info {
     position: relative;
     background-color: rgba(37, 77, 73, 0.7);
-    height: 70vh;
+    height: 75vh;
     max-height: 500px;
     display: flex;
     flex-direction: column;
@@ -211,16 +211,10 @@ body {
     justify-content: center;
 }
 
-.input-contact:hover {
-    color: #378C3F;
-    transition: 0.5s;
-}
-
 .input-contact input,
 .text-area-contact {
-    width: 90%;
-    max-width: 500px;
-    padding: 0 10px 0 25px;
+    width: 97%;
+    padding: 0 10px 0 30px;
     height: 40px;
     border-radius: 20px;
     border: 1px solid gray;
@@ -231,7 +225,6 @@ body {
     outline: 2px solid #378C3F;
     border: none;
     caret-color: #378C3F;
-    transition: 0.3s;
 }
 
 .input-contact svg {
