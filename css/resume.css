@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Kamran';
+    src: url('../fonts/fa/B-Kamran/B-Kamran_0.ttf');
+}
+
+@font-face {
+    font-family: 'Dirooz';
+    src: url('../fonts/fa/Dirooz/Dirooz.ttf');
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/fa/Vazir/Vazir.ttf');
+}
+
+@font-face {
+    font-family: 'FarsiDigit';
+    src: url('../fonts/fa/Dirooz/Farsi-Digits/Dirooz-FD.ttf');
+}
+
+body {
+    font-family: 'Vazir';
+}
+
+
+/* Scroll To Top */
+#scroll-top {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: #378C3F;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 16pt;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Profile Header Styles (CreativeCV) */
+.button-custom {
+    background-color: #378C3F;
+    color: white;
+    border-radius: 3px;
+    padding: 7px 20px;
+    border: none;
+}
+
+.back-image {
+    background-image: url("https://demo.templateflip.com/creative-cv/images/cc-bg-1.jpg");
+}
+
+.header-user-info {
+    position: relative;
+    background-color: rgba(37, 77, 73, 0.7);
+    height: 75vh;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.header-user-info img {
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.header-user-info h1,
+.header-user-info h2 {
+    color: #fff;
+}
+
+.header-user-info h1 {
+    font-size: 24pt;
+}
+
+.header-user-info h2 {
+    font-size: 16pt;
+}
+
+.header-user-info .social-networks-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    bottom: -18px;
+}
+
+.social-networks-top a {
+    background-color: gray;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16pt;
+    border-radius: 50%;
+}
+
+/* About Me Styles (CreativeCV) */
+
+.justify-text {
+    text-align: justify;
+}
+
+.farsi-digit {
+    font-family: 'FarsiDigit';
+}
+
+
+/* Skills Styles (CreativeCV) */
+
+.skill-percentage {
+    direction: ltr;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skillname-percentage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #378C3F;
+    font-size: 14pt;
+}
+
+.skill-percentage .parent-percentage {
+    width: 100%;
+    background-color: gray;
+    height: 7px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.skill-percentage .parent-percentage div {
+    background-color: #378C3F;
+    height: 100%;
+}
+
+/* Portfolio Styles (CreativeCV) */
+
+.portfolio-item {
+    padding: 20px;
+}
+
+.portfolio-item img {
+    width: 100%;
+}
+
+.portfolio-item-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-item-body a {
+    text-decoration: none;
+    font-size: 14pt;
+    color: #378C3F;
+    border: .5px solid gray;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.portfolio-item-body a:hover {
+    background-color: #378C3F;
+    color: wheat;
+}
+
+/* History Styles (CreativeCV) */
+.history-item {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.history-item img {
+    width: 40%;
+}
+
+
+/* Contact Us Styles (CreativeCV) */
+.contact-us {
+    border-radius: 20px;
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-contact {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.input-contact input,
+.text-area-contact {
+    width: 97%;
+    padding: 0 10px 0 30px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid gray;
+}
+
+.input-contact input:focus,
+.text-area-contact:focus {
+    outline: 2px solid #378C3F;
+    border: none;
+    caret-color: #378C3F;
+}
+
+.input-contact svg {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+
+.text-area-contact {
+    height: 120px;
+}
+
+::placeholder {
+    text-align: right;
+}
+
+/* Footer Styles (CreativeCV) */
+.social-networks-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-networks-footer a {
+    color: #585a58;
+    font-size: 22pt;
+}
