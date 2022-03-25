@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <button onclick="topFunction()" id="scroll-top">
+    <button onclick="ScrollToTop()" id="scroll-to-top-creative">
         <i class="fa fa-arrow-up"></i>
     </button>
     <header>
@@ -251,7 +251,22 @@
     <!-- Font Awesome -->
     <script src="../lib/fontawesome/js/all.min.js"></script>
     <!-- My Scripts -->
-    <script src="../js/script.js"></script>
+    <script>
+        var btnScrollToTop_creative = document.getElementById("scroll-to-top-creative")
+        btnScrollToTop_creative.classList.add("d-none")
+
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btnScrollToTop_creative.classList.add("d-block")
+                btnScrollToTop_creative.classList.remove("d-none")
+            } else {
+                btnScrollToTop_creative.classList.add("d-none")
+                btnScrollToTop_creative.classList.remove("d-block")
+            }
+        }
+    </script>
 </body>
 
 </html>
