@@ -1,1 +1,48 @@
 @import url('fonts.css');
+
+a {
+    text-decoration: none;
+}
+
+.sidenav {
+    display: inline-block;
+    width: 20%;
+    height: 100vh;
+    background-color: #343a40;
+}
+
+.profile-info img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.sidenav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.sidenav-items a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    background-color: #007bff;
+    width: 240px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.sidenav-items a svg {
+    margin: 0 10px;
+}
+
+.header-panel {
+    background-color: #eee;
+    display: inline-block;
+    width: 70%;
+    height: 500px;
+}
