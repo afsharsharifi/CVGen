@@ -14,7 +14,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
     <!-- My Styles -->
-    <link rel="stylesheet" href="../css/resume.css">
+    <link rel="stylesheet" href="../css/CreativeCV.css">
 </head>
 
 <body>
@@ -252,8 +252,12 @@
     <script src="../lib/fontawesome/js/all.min.js"></script>
     <!-- My Scripts -->
     <script>
+        function ScrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
         var btnScrollToTop_creative = document.getElementById("scroll-to-top-creative")
-        btnScrollToTop_creative.classList.add("d-none")
+        btnScrollToTop_creative.classList.add("d-block")
 
         window.onscroll = function() { scrollFunction() };
 

@@ -1,36 +1,7 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-@font-face {
-    font-family: 'Kamran';
-    src: url('../fonts/fa/B-Kamran/B-Kamran_0.ttf');
-}
-
-@font-face {
-    font-family: 'Dirooz';
-    src: url('../fonts/fa/Dirooz/Dirooz.ttf');
-}
-
-@font-face {
-    font-family: 'Vazir';
-    src: url('../fonts/fa/Vazir/Vazir.ttf');
-}
-
-@font-face {
-    font-family: 'FarsiDigit';
-    src: url('../fonts/fa/Dirooz/Farsi-Digits/Dirooz-FD.ttf');
-}
-
-body {
-    font-family: 'Vazir';
-}
-
+@import url('fonts.css');
 
 /* Scroll To Top */
-#scroll-top {
+#scroll-to-top-creative {
     position: fixed;
     right: 10px;
     bottom: 10px;
@@ -41,9 +12,6 @@ body {
     border: none;
     border-radius: 50%;
     font-size: 16pt;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
 }
 
 
