@@ -20,7 +20,7 @@
 <body>
     <header>
         <div class="header-color-cover">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">CVGen</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,19 +29,19 @@
                     <div class="collapse navbar-collapse" id="navbarColor02">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">خانه</a>
+                                <a class="nav-link active" aria-current="page" href="/">خانه</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">درباره رزومه</a>
+                                <a class="nav-link" href="#features">ویژگیها</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">راهنما</a>
+                                <a class="nav-link" href="#templates">قالبها</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">درباره ما</a>
+                                <a class="nav-link" href="#status">آخرینها</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">ارتباط با ما</a>
+                                <a class="nav-link" href="#contact-us">انتقاد یا پیشنهاد</a>
                             </li>
                         </ul>
                         <div class="d-flex">
@@ -51,7 +51,7 @@
                 </div>
             </nav>
             <div class="header-info d-flex flex-column align-items-center justify-content-center">
-                <h1 class="text-white fw-bold mb-lg-5">با سیویژن راحت رزومه بساز...!</h1>
+                <h1 class="text-white fw-bold mb-lg-5 text-center">با سیویژن راحت رزومه بساز...!</h1>
                 <div>
                     <button>ورود</button>
                     <button>ثبت نام</button>
@@ -111,7 +111,7 @@
                             <img class="w-100" src="https://superdevresources.com/wp-content/uploads/2018/02/creative-cv_featured.png" alt="">
                             <div class="px-5 py-3">
                                 <h3>اسم قالب</h3>
-                                <p class="text-justify">
+                                <p class="text-justify template-desc">
                                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
                                 </p>
                             </div>
@@ -156,7 +156,7 @@
     </section>
     <section id="status">
         <div class="container mt-5">
-            <div class="row justify-content-center justify-content-md-around">
+            <div class="row justify-content-center justify-content-md-around gap-3 gap-md-2">
                 <h4 class="title-section fs-2 text-center mb-5">آخرینهای <span>سیویژن</span></h4>
                 <div class="col-6 col-lg-4 d-flex flex-column justify-content-between align-items-center">
                     <div class="text-center bg-primary text-white px-4 py-2 rounded-1 shadow">
@@ -210,41 +210,30 @@
     </section>
     <footer>
         <div class="container">
-            <div class="row row-cols-5 py-5 my-5 border-top">
-                <div class="col">
-                    <h5>Section</h5>
+            <div class="row row-cols-5 py-5 my-3 border-top gap-5 gap-md-0">
+                <div class="col-12 col-md-3">
+                    <h5>صفحات</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">خانه</a></li>
+                        <li class="nav-item mb-2"><a href="#features" class="nav-link p-0 text-muted">ویژگیها</a></li>
+                        <li class="nav-item mb-2"><a href="#templates" class="nav-link p-0 text-muted">قالبها</a></li>
+                        <li class="nav-item mb-2"><a href="#status" class="nav-link p-0 text-muted">آخرینها</a></li>
+                        <li class="nav-item mb-2"><a href="#contact-us" class="nav-link p-0 text-muted">انتقاد یا پیشنهاد</a></li>
                     </ul>
                 </div>
 
-                <div class="col">
-                    <h5>Section</h5>
+                <div class="col-12 col-md-5">
+                    <h5>سوالات متداول</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">آیا استفاده از سیویژن رایگان است؟</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">میتونیم قالب اختصاصی سقارش بدیم؟</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">تعداد قالبها افزایش میابد؟</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">چرا باید از سیویژن استفاده کنیم؟</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">سوال خود را بپرسید!</a></li>
                     </ul>
                 </div>
 
-                <div class="col">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                    </ul>
-                </div>
-
-                <div>
+                <div class="col-12 col-md-3">
                     <h4 class="title-section fs-4 text-center"><span>سیویژن</span> را دنبال کنید</h4>
                     <div class="social-media mt-5">
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -254,6 +243,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="bg-info p-3">
+            <h3 class="m-0 text-white text-center fs-5">ساخته شده توسط <a class="text-white" href="https://afsharsharifi.ir">افشار شریفی</a></h3>
         </div>
     </footer>
 

@@ -85,8 +85,9 @@ header {
     border-radius: 30px;
 }
 
-.custom-input input:hover,
+.custom-input input:focus,
 .custom-textarea textarea:focus {
+    outline: none;
     border: 2px solid blue;
 }
 
