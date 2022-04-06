@@ -1,9 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 @font-face {
     font-family: 'Kamran';
     src: url('../fonts/fa/B-Kamran/B-Kamran_0.ttf');
