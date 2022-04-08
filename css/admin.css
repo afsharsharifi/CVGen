@@ -93,3 +93,8 @@ body {
     color: #FFF;
     border: none;
 }
+
+/* Projects */
+.all-projects .project-item img {
+    width: 100px;
+}
