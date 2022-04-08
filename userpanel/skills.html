@@ -64,49 +64,84 @@
                 <a href="#"> CVGen</a>
             </header>
             <main class="mt-5 p-2">
-                <form method="post" autocomplete="off">
-                    <div class="d-flex justify-content-between mb-3">
-                        <h4>اطلاعات پایه</h4>
-                        <button class="btn-primary rounded-1 shadow">
-                            <i class="fa fa-save"></i>
-                            <span>ذخیره</span>
-                        </button>
-                    </div>
-                    <div class="row">
-                        <div class="form-floating col-6 col-md-3 mb-2">
-                            <input type="text" class="form-control" id="firstname" placeholder="افشار" value="افشار">
-                            <label for="firstname">نام</label>
-                        </div>
-                        <div class="form-floating col-6 col-md-3 mb-2">
-                            <input type="text" class="form-control" id="lastname" placeholder="شریفی" value="شریفی">
-                            <label for="lastname">نام خانوادگی</label>
-                        </div>
-                        <div class="form-floating col-6 col-md-3 mb-2">
-                            <input type="text" class="form-control" id="position" placeholder="توسعه دهنده بکند" value="توسعه دهنده بکند">
-                            <label for="position">عنوان شغلی</label>
-                        </div>
-                        <div class="form-floating col-6 col-md-3 mb-2">
-                            <input type="number" class="form-control" id="birthyear" placeholder="1380" value="1380" min="1330" max="1401">
-                            <label for="birthyear">سال تولد</label>
-                        </div>
-                        <div class="form-floating col-6 col-md-4 mb-2">
-                            <input type="email" class="form-control" id="email" placeholder="afsharsharifi2020@gmail.com" value="afsharsharifi2020@gmail.com">
-                            <label for="email">ایمیل</label>
-                        </div>
-                        <div class="form-floating col-6 col-md-4 mb-2">
-                            <input type="tel" class="form-control" id="phone" placeholder="09012095461" value="09012095461">
-                            <label for="phone">تلفن همراه</label>
-                        </div>
-                        <div class="form-floating col-6 col-md-4 mb-2">
-                            <input type="text" class="form-control" id="address" placeholder="تهران" value="تهران">
-                            <label for="phone">محل سکونت</label>
-                        </div>
-                        <div class="form-floating">
-                            <textarea class="form-control h-300px" placeholder="درباره من" id="about-me" rows="5"></textarea>
-                            <label for="about-me">درباره من</label>
+                <!-- Button trigger modal -->
+                <div class="d-flex justify-content-between mb-3">
+                    <h4>مهارت ها</h4>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <span>
+                            <i class="fa fa-plus"></i>
+                            افزودن مهارت
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">افزودن مهارت</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post">
+                                    <div class="mb-3">
+                                        <label for="skill-title" class="form-label">نام مهارت</label>
+                                        <input type="text" class="form-control" id="skill-title" placeholder="پایتون">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="skill-percentage" class="form-label">درصد مهارت</label>
+                                        <input type="number" class="form-control" id="skill-percentage" min="0" max="100" placeholder="80">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">افزودن</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
+
+                <div class="all-skills">
+                    <div class="skill-item d-flex justify-content-between align-items-center mb-2">
+                        <h5>پایتون</h5>
+                        <div class="progress w-75">
+                            <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                        <div>
+                            <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
+                            <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="skill-item d-flex justify-content-between align-items-center mb-2">
+                        <h5>پایتون</h5>
+                        <div class="progress w-75">
+                            <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                        <div>
+                            <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
+                            <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="skill-item d-flex justify-content-between align-items-center mb-2">
+                        <h5>پایتون</h5>
+                        <div class="progress w-75">
+                            <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                        <div>
+                            <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
+                            <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="skill-item d-flex justify-content-between align-items-center mb-2">
+                        <h5>پایتون</h5>
+                        <div class="progress w-75">
+                            <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                        <div>
+                            <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
+                            <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </section>

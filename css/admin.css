@@ -79,3 +79,17 @@ body {
 .form-floating label {
     padding: 15px 30px;
 }
+
+/* Skills */
+.all-skills .skill-item {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.btn-action {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #FFF;
+    border: none;
+}
