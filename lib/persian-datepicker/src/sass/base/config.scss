@@ -1,0 +1,99 @@
+$grid-gutter: 5px !default;
+// Color
+// ===================================================
+$white: #fff !default;
+$dark: #333 !default;
+$gray: #ccc !default;
+$light-gray: #eee !default;
+$ultra-light-gray: #f1f1f1 !default;
+$super-light-gray: #f9f9f9 !default;
+$today-color: #006dcc !default;
+$selected-color: darken($today-color, 10) !default;
+$hovered-color: lighten($today-color, 5) !default;
+$transparent-bg: rgba(0, 0, 0, .7) !default;;
+
+// Font Style & text
+// ===================================================
+$main-font: 12px tahoma !default;
+$big-font: 14px tahoma !default;
+$small-font: 10px tahoma !default;
+$strong-font: bold !default;;
+$super-strong-font: bold !default;;
+$global-text-color: $dark !default;;
+
+// Text alignment
+// ===================================================
+$global-text-align: center !default;
+
+// Layout curve
+// ===================================================
+$layout-big-curve: 0 !default;
+$layout-small-curve: 0 !default;
+$main-box-shadow: 0 5px 10px rgba(0, 0, 0, .2) !default;
+$animate-duration: all 100ms ease !default;
+
+// Plot area
+// ===================================================
+$plot-area-bg: $white !default;
+$plot-area-border: 1px solid $gray !default;
+
+// Button
+// ===================================================
+$button-bg: rgba(250, 250, 250, .1) !default;
+$button-bg-hover: rgba(250, 250, 250, .3) !default;
+$button-text-color: $dark !default;
+
+// Date Item
+// ===================================================
+
+// normal
+$date-item-font: 14px !default;
+$date-item-bg: $white !default;
+$date-item-border: 0 !default;
+$date-item-color: $dark !default;
+$date-item-text-shadow: none !default;
+
+// hover
+$date-item-hover-font: 14px !default;
+$date-item-hover-bg: $hovered-color !default;
+$date-item-hover-border: 0 !default;
+$date-item-hover-color: $white !default;
+$date-item-hover-text-shadow: none !default;
+
+// today
+$date-item-today-bg: $dark !default;
+$date-item-today-border: 0 !default;
+$date-item-today-color: $white !default;
+$date-item-today-text-shadow: none !default;
+
+// selected
+$date-item-selected-bg: $selected-color !default;
+$date-item-selected-border: none;
+$date-item-selected-color: $white !default;
+$date-item-selected-text-shadow: 1px 1px 1px #000 !default;
+
+// numb
+$date-item-numb-bg: '';
+$date-item-numb-border: none !default;
+$date-item-numb-color: $gray !default;
+$date-item-numb-text-shadow: none !default;
+
+// disabled
+$date-item-disable-bg: $ultra-light-gray !default;
+$date-item-disable-border: none !default;
+$date-item-disable-color: $gray !default;
+$date-item-disable-text-shadow: none !default;
+
+// Timepicker
+// ===================================================
+$timepicker-border: 1px solid $ultra-light-gray !default;
+$timepicker-bg: $super-light-gray !default;
+$timepicker-segment-divider-font: 12px bold !default;
+$timepicker-input-bg: $super-light-gray !default;
+$timepicker-input-border: none !default;
+$timepicker-btn-color: $gray !default;
+$timepicker-btn-hover-color: darken($gray, 30) !default;
+
+// alter calendar hint
+// ===================================================
+$alter-calendar-hint-color: $ultra-light-gray !default;

@@ -95,6 +95,7 @@ body {
 }
 
 /* Projects */
-.all-projects .project-item img {
-    width: 100px;
+.all-projects .project-item img,
+.exp-item img {
+    width: 80px;
 }

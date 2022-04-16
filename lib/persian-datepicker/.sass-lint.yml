@@ -1,0 +1,12 @@
+files:
+  include: 'src/sass/**/*.s+(a|c)ss'
+
+
+rules:
+  extends-before-declarations: 0
+  property-sort-order: 0
+  force-element-nesting: 0
+  no-transition-all: 0
+  nesting-depth:
+      - 1
+      - max-depth: 4

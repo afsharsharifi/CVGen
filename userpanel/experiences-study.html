@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.rtl.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
+    <!-- Persian Date Picker -->
+    <link rel="stylesheet" href="http://babakhani.github.io/PersianWebToolkit/beta/lib/persian-datepicker/dist/css/persian-datepicker.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="http://babakhani.github.io/PersianWebToolkit/beta/lib/persian-date/dist/persian-date.js"></script>
+    <script src="http://babakhani.github.io/PersianWebToolkit/beta/lib/persian-datepicker/dist/js/persian-datepicker.js"></script>
     <!-- My Styles -->
     <link rel="stylesheet" href="../css/admin.css">
 </head>
@@ -41,9 +46,13 @@
                     <i class="fas fa-braille"></i>
                     <span>نمونه کار ها</span>
                 </a>
-                <a class="selected-item" href="./experiences.html">
+                <a href="./experiences-work.html">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>سوابق</span>
+                    <span>سوابق شغلی</span>
+                </a>
+                <a class="selected-item" href="./experiences-study.html">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>سوابق تحصیلی</span>
                 </a>
                 <a href="./messages.html">
                     <i class="fas fa-envelope"></i>
@@ -66,11 +75,11 @@
             <main class="mt-5 p-2">
                 <!-- Button trigger modal -->
                 <div class="d-flex justify-content-between mb-3">
-                    <h4>سوابق (کاری/تحصیلی)</h4>
+                    <h4>سوابق (تحصیلی)</h4>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <span>
                             <i class="fa fa-plus"></i>
-                            افزودن سابقه (کاری/تحصیلی)
+                            افزودن سابقه (تحصیلی)
                         </span>
                     </button>
                 </div>
@@ -80,31 +89,56 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">افزودن نمونه کار</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel">افزودن سابقه تحصیلی</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form method="post">
                                     <div class="mb-3">
-                                        <label for="project-name" class="form-label">نام پروژه</label>
-                                        <input type="text" class="form-control" id="project-name" placeholder="سیویژن">
+                                        <label for="school-name" class="form-label">نام دانشگاه/موسسه</label>
+                                        <input type="text" class="form-control" id="school-name" placeholder="دانشکده فنی و حرفه ای انقلاب اسلامی">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="project-image" class="form-label">تصویر پروژه</label>
-                                        <input type="file" class="form-control" id="project-image" placeholder="سیویژن" accept=".jpg, .jpeg, .png">
+                                        <label for="school-logo" class="form-label">لوگو</label>
+                                        <input type="file" class="form-control" id="school-logo" placeholder="سیویژن" accept=".jpg, .jpeg, .png">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="project-link" class="form-label">لینک پروژه</label>
-                                        <input type="text" class="form-control" id="project-link" placeholder="https://cvgen.com">
+                                        <label for="start-date" class="form-label">از</label>
+                                        <input type="text" class="form-control expDate" id="start-date" placeholder="1399/07">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">توضیحات پروژه</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <label for="end-date" class="form-label">تا</label>
+                                        <input type="text" class="form-control expDate" id="end-date" placeholder="1401/03">
                                     </div>
                                     <button type="submit" class="btn btn-primary">افزودن</button>
                                 </form>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="all-exp">
+                    <div class="exp-item d-flex justify-content-between align-items-center mb-2 bg-light p-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/fa/thumb/9/9f/Enghelab_technical_college_logo.svg/1200px-Enghelab_technical_college_logo.svg.png" alt="دانشکده انقلاب اسلامی">
+                        <h4 class="fs-6">دانشکده فنی و حرفه ای انقلاب اسلامی</h4>
+                        <h4 class="fs-6">
+                            از
+                            <span class="exp-start-date">1399/07</span>
+                            تا
+                            <span class="exp-end-date">1401/03</span>
+                            مشغول تحصیل بودم
+                        </h4>
+                    </div>
+                    <div class="exp-item d-flex justify-content-between align-items-center mb-2 bg-light p-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/fa/thumb/9/9f/Enghelab_technical_college_logo.svg/1200px-Enghelab_technical_college_logo.svg.png" alt="دانشکده انقلاب اسلامی">
+                        <h4 class="fs-6">دانشکده فنی و حرفه ای انقلاب اسلامی</h4>
+                        <h4 class="fs-6">
+                            از
+                            <span class="exp-start-date">1399/07</span>
+                            تا
+                            <span class="exp-end-date">1401/03</span>
+                            مشغول تحصیل بودم
+                        </h4>
                     </div>
                 </div>
             </main>
@@ -116,6 +150,19 @@
     <!-- Font Awesome -->
     <script src="../lib/fontawesome/js/all.min.js"></script>
 
+    <!-- Persian Date OBJ -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".expDate").pDatepicker({
+                initialValue: false,
+                observer: true,
+                format: 'YYYY/MM',
+                persianDigit: false,
+                autoClose: true,
+                maxDate: "today"
+            });
+        });
+    </script>
     <script>
         document.getElementById("sidenav-controller").onclick = function() {
             var sidenavElm = document.getElementsByClassName("sidenav")[0]

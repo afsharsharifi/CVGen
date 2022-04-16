@@ -1,0 +1,44 @@
+.datepicker-plot-area {
+  .datepicker-navigator {
+    display: block;
+    width: 100%;
+    float: left;
+
+    .pwt-btn-next,
+    .pwt-btn-switch,
+    .pwt-btn-prev {
+      display: block;
+      float: left;
+      height: 28px;
+      line-height: 28px;
+      font-weight: $strong-font;
+      background-color: $button-bg;
+      color: $button-text-color;
+      @extend %interactive-item;
+      @extend %small-curve;
+
+      &:hover {
+        background-color: $button-bg-hover;
+      }
+    }
+
+    .pwt-btn-next {
+      display: block;
+      width: 15%;
+      float: left;
+    }
+
+    .pwt-btn-switch {
+      display: block;
+      width: 66%;
+      margin: 0 2%;
+      float: left;
+    }
+
+    .pwt-btn-prev {
+      display: block;
+      width: 15%;
+      float: left;
+    }
+  }
+}
