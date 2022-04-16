@@ -16,7 +16,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
     <!-- My Styles -->
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/user-panel.css">
 </head>
 
 <body>
@@ -104,6 +104,16 @@
                         <div class="form-floating col-6 col-md-4 mb-2">
                             <input type="text" class="form-control" id="address" placeholder="تهران" value="تهران">
                             <label for="phone">محل سکونت</label>
+                        </div>
+                        <div class="col-12 col-md-12 mb-4">
+                            <label for="select-template">انتخاب قالب</label>
+                            <select class="form-select" aria-label="Default select example" id="select-template">
+                                <option value="1" selected>Creative CV</option>
+                                <option value="2">I’mRex</option>
+                                <option value="3">Material CV</option>
+                                <option value="4">Material Resume</option>
+                                <option value="5">Right Resume</option>
+                            </select>
                         </div>
                         <div class="form-floating">
                             <textarea class="form-control h-300px" placeholder="درباره من" id="about-me" rows="5"></textarea>
