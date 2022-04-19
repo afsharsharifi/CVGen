@@ -1,0 +1,136 @@
+.datepicker-plot-area {
+
+  .datepicker-time-view {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: $grid-gutter;
+    //margin: 3px -5px;
+    background: $timepicker-bg;
+    border-top: $timepicker-border;
+
+    & > .time-segment {
+      display: block;
+      width: 22%;
+      float: left;
+      overflow: hidden;
+      @extend %interactive-item;
+      @extend %big-curve;
+
+      &:hover {
+        .down-btn,
+        .up-btn {
+          font-weight: $strong-font;
+        }
+      }
+
+    }
+
+    & .divider {
+      display: block;
+      width: 3%;
+      height: 60px;
+      line-height: 60px;
+      float: left;
+      overflow: hidden;
+      font: $timepicker-segment-divider-font;
+
+      span {
+        height: 60px;
+        line-height: 60px;
+      }
+    }
+
+    .down-btn,
+    .up-btn {
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 0;
+      height: 20px;
+      line-height: 22px;
+      color: $timepicker-btn-color;
+      @extend %top-big-curve;
+      @extend %interactive-item;
+      @extend %animation;
+
+      &:hover {
+        background-color: $button-bg-hover;
+        color: $timepicker-btn-hover-color;
+      }
+
+    }
+
+    .down-btn {
+      @extend %bottom-big-curve;
+    }
+
+    input {
+      display: block;
+      width: 90%;
+      margin: 0 5%;
+      height: 20px;
+      padding: 0;
+      outline: none;
+      @extend %interactive-item;
+      border: $timepicker-input-border;
+      background: transparent;
+    }
+  }
+
+  &.datepicker-state-only-time {
+    .datepicker-time-view {
+      padding: 0 $grid-gutter;
+      margin: 0;
+
+      & > .time-segment,
+      & > .divider {
+        padding: $grid-gutter 0;
+      }
+    }
+  }
+
+  &.datepicker-state-no-meridian {
+    .datepicker-time-view {
+
+      & > .time-segment {
+        width: 31.33%;
+      }
+
+      & > .meridian-divider {
+        display: none;
+      }
+
+    }
+  }
+
+  &.datepicker-state-no-second {
+    .datepicker-time-view {
+
+      & > .time-segment {
+        width: 31.33%;
+      }
+
+      & > .second-divider {
+        display: none;
+      }
+
+    }
+  }
+
+  &.datepicker-state-no-meridian.datepicker-state-no-second {
+    .datepicker-time-view {
+
+      & > .time-segment {
+        width: 48%;
+      }
+
+      & > .second-divider,
+      & > .meridian-divider {
+        display: none;
+      }
+
+    }
+  }
+
+}
