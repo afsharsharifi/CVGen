@@ -1,0 +1,100 @@
+@import url('fonts.css');
+header {
+    height: 100vh;
+    background-image: url("https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/788444/0918-effective-landing-page-design-Waldek_Social-586ce09530088e192f28b88a0e600227.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header-color-cover {
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.4);
+}
+
+.header-info {
+    height: 600px;
+}
+
+.header-info button {
+    background-color: #FFF;
+    color: #000;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+}
+
+.header-info button:hover {
+    background-color: #EEE;
+}
+
+.title-section span {
+    font-family: 'Kamran';
+    background-color: #0000ff;
+    color: #FFF;
+    padding: 0 5px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.custom-input input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 30px;
+}
+
+.custom-textarea textarea {
+    resize: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.custom-input input:focus,
+.custom-textarea textarea:focus {
+    outline: none;
+    border: 2px solid blue;
+}
+
+
+
+
+/* Footer */
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    border: none;
+    background-color: #2e2ef8;
+    color: white;
+    padding: 20px;
+    font-size: 18pt;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media a:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+
+#scroll-to-top-index {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: #0000ff;
+    color: white;
+    border-radius: 50%;
+    display: none;
+}

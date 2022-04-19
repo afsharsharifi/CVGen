@@ -1,0 +1,101 @@
+@import url('fonts.css');
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #eee;
+    overflow-x: hidden;
+}
+
+.sidenav {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #343a40;
+    overflow: hidden;
+}
+
+.profile-info img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.sidenav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.sidenav-items a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    background-color: #007bff;
+    width: 240px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.selected-item {
+    background-color: #11b8eb !important;
+}
+
+.sidenav-items a svg {
+    margin: 0 10px;
+}
+
+.maincontent {
+    float: left;
+}
+
+.maincontent header {
+    position: fixed;
+    background-color: #fff;
+    width: inherit;
+}
+
+.w-80 {
+    width: 80% !important;
+}
+
+.h-300px {
+    height: 300px !important;
+}
+
+.sidenav-button {
+    border: none;
+    color: #000;
+    background-color: #fff;
+}
+
+.form-floating label {
+    padding: 15px 30px;
+}
+
+/* Skills */
+.all-skills .skill-item {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.btn-action {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #FFF;
+    border: none;
+}
+
+/* Projects */
+.all-projects .project-item img,
+.exp-item img {
+    width: 80px;
+}

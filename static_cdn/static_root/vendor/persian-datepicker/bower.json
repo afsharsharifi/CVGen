@@ -1,0 +1,43 @@
+{
+  "name": "persian-datepicker",
+  "version": "1.2.0-rc4",
+  "main": [
+    "dist/css/persian-datepicker.min.css",
+    "dist/js/persian-datepicker.min.js"
+  ],
+  "ignore": [
+    ".*",
+    "Gruntfile.js",
+    "jslint.conf",
+    "pwt.datepicker.jquery.json",
+    "src"
+  ],
+  "dependencies": {
+    "jquery": ">=3.3.1",
+    "persian-date": ">=1.1.0-rc2"
+  },
+  "keywords": [
+    "bootstrap-datetimepicker",
+    "datetimepicker",
+    "jalali-date",
+    "jquery-plugin",
+    "persian-date",
+    "persian-datepicker"
+  ],
+  "license": "MIT",
+  "contributors": [
+    "Reza Babakhani <babakhani.reza@gmail.com>"
+  ],
+  "repository": "babakhani/persian-datepicker",
+  "homepage": "http://babakhani.github.io/PersianWebToolkit/docs/datepicker",
+  "bugs": {
+    "url": "https://github.com/babakhani/pwt.datepicker/issues"
+  },
+  "authors": [
+    "Reza Babakhani <babakhani.reza@gmail.com>"
+  ],
+  "files": [
+    "dist"
+  ],
+  "description": "jQuery datepicker plugin work with Iranian calendar."
+}
