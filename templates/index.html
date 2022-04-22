@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -9,14 +10,17 @@
     <!-- Title -->
     <title>CVGen - رزومه ساز سیویژن</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static './images/favicon.ico' %}">
+
     <!-- CSS Reset -->
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="{% static './css/reset.css' %}">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="{% static './vendor/bootstrap/css/bootstrap.rtl.min.css' %}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{% static './vendor/fontawesome/css/all.min.css' %}">
     <!-- My Styles -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
 </head>
 
 <body>
@@ -255,11 +259,10 @@
         <i class="fa fa-arrow-up"></i>
     </button>
     <!-- Bootstrap -->
-    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static './vendor/bootstrap/js/bootstrap.min.js' %}"></script>
     <!-- Font Awesome -->
-    <script src="./vendor/fontawesome/js/all.min.js"></script>
+    <script src="{% static './vendor/fontawesome/js/all.min.js' %}"></script>
     <!-- My Scripts -->
-    <script src="./js/script.js"></script>
 </body>
 
 </html>

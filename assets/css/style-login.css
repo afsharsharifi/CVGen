@@ -1,0 +1,44 @@
+.login-wrapper {
+    width: 90%;
+    max-width: 500px;
+    background-color: skyblue;
+    border-radius: 20px;
+}
+
+.login-wrapper input {
+    width: 80%;
+    height: 40px;
+    max-width: 370px;
+    border-radius: 15px;
+    padding: 0 10px;
+    border: none;
+}
+
+.login-wrapper form button {
+    width: 80%;
+    height: 40px;
+    max-width: 370px;
+    border-radius: 50px;
+    border: none;
+    background-color: #0084ff;
+    color: #fff;
+}
+
+.login-wrapper .social-login-icons {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+}
+
+.bg-color-google {
+    background-color: #de5246;
+}
+
+.bg-color-github {
+    background-color: #171515;
+}
+
+.bg-color-linkedin {
+    background-color: #0072b1;
+}
