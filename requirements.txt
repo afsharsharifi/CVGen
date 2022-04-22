@@ -1,0 +1,13 @@
+asgiref               3.5.0
+autopep8              1.6.0
+Django                4.0.4
+django-render-partial 0.4
+Pillow                9.1.0
+pip                   22.0.4
+psycopg2              2.9.3
+pycodestyle           2.8.0
+setuptools            60.9.3
+sqlparse              0.4.2
+toml                  0.10.2
+tzdata                2022.1
+wheel                 0.37.1
