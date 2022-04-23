@@ -1,49 +1,37 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+{% extends 'accounts/shared/_MainLayout.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Afshar Sharifi">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title -->
-    <title>CVGen - رزومه ساز سیویژن</title>
+{% block page_title %}
+<title>sd,dCk</title>
+{% endblock %}
 
-    <!-- CSS Reset -->
-    <link rel="stylesheet" href="../css/reset.css">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.rtl.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
-    <!-- My Styles -->
-    <link rel="stylesheet" href="../css/style-login.css">
-</head>
-
-<body>
-    <section class="vh-100 d-flex align-items-center justify-content-center bg-light">
-        <div class="login-wrapper">
-            <form method="post" class="d-flex flex-column align-items-center justify-content-between gap-4 p-3">
-                <h4>وارد شوید!</h4>
-                <input type="text" placeholder="نام کاربری یا ایمیل">
-                <input type="password" placeholder="گذرواژه">
-                <button type="submit">ورود</button>
-            </form>
-            <div class="pb-5 pt-2">
-                <h5 class="text-center pb-4">ورود با</h5>
-                <div class="d-flex align-items-center justify-content-evenly">
-                    <button class="social-login-icons bg-color-google">
-                        <i class="fab fa-google text-white"></i>
-                    </button>
-                    <button class="social-login-icons bg-color-github">
-                        <i class="fab fa-github text-white"></i>
-                    </button>
-                    <button class="social-login-icons bg-color-linkedin">
-                        <i class="fab fa-linkedin text-white"></i>
-                    </button>
-                </div>
+{% block content %}
+<section class="vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div class="login-wrapper">
+        <form method="post" class="d-flex flex-column align-items-center justify-content-between gap-4 p-3">
+            {% csrf_token %}
+            <h4>وارد شوید!</h4>
+            {{ login_form.username }}
+            {{ login_form.password }}
+            <button type="submit">ورود</button>
+        </form>
+        <div class="pb-5 pt-2">
+            <h5 class="text-center pb-4">ورود با</h5>
+            <div class="d-flex align-items-center justify-content-evenly">
+                <button class="social-login-icons bg-color-google">
+                    <i class="fab fa-google text-white"></i>
+                </button>
+                <button class="social-login-icons bg-color-github">
+                    <i class="fab fa-github text-white"></i>
+                </button>
+                <button class="social-login-icons bg-color-linkedin">
+                    <i class="fab fa-linkedin text-white"></i>
+                </button>
             </div>
         </div>
-    </section>
-</body>
-
-</html>
+        <p class="text-center">
+            <a href="/signup" class="text-muted text-decoration-none">میخواهم ثبت نام کنم!</a>
+        </p>
+    </div>
+</section>
+{% endblock %}
