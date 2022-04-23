@@ -1,0 +1,136 @@
+{% extends 'userpanel/shared/_MainLayout.html' %}
+{% load static %}
+
+
+{% block page_title %}
+<title>سوابق تحصیلی و کاری - سیویژن</title>
+{% endblock %}
+{% block header_ref %}
+<!-- Persian Date Picker -->
+<link rel="stylesheet" href="http://babakhani.github.io/PersianWebToolkit/beta/lib/persian-datepicker/dist/css/persian-datepicker.css" />
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="http://babakhani.github.io/PersianWebToolkit/beta/lib/persian-date/dist/persian-date.js"></script>
+<script src="http://babakhani.github.io/PersianWebToolkit/beta/lib/persian-datepicker/dist/js/persian-datepicker.js"></script>
+{% endblock %}
+
+{% block content %}
+<section class="user-panel">
+    <div class="sidenav d-block">
+        <div class="profile-info d-flex justify-content-around align-items-center border-bottom mb-3">
+            <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" alt="">
+            <div class="pt-3">
+                <p class="fs-5 text-white">افشار شریفی</p>
+            </div>
+        </div>
+        <div class="sidenav-items">
+            <a href="./basic-info.html">
+                <i class="fa fa-user"></i>
+                <span>مشخصات</span>
+            </a>
+            <a href="./skills.html">
+                <i class="fas fa-brain"></i>
+                <span>مهارت ها</span>
+            </a>
+            <a href="./projects.html">
+                <i class="fas fa-braille"></i>
+                <span>نمونه کار ها</span>
+            </a>
+            <a href="./experiences-work.html">
+                <i class="fas fa-calendar-alt"></i>
+                <span>سوابق شغلی</span>
+            </a>
+            <a class="selected-item" href="./experiences-study.html">
+                <i class="fas fa-calendar-alt"></i>
+                <span>سوابق تحصیلی</span>
+            </a>
+            <a href="./messages.html">
+                <i class="fas fa-envelope"></i>
+                <span>پیام ها</span>
+            </a>
+        </div>
+    </div>
+    <div class="maincontent w-80">
+        <header class="py-2 px-4 d-flex align-items-center justify-content-between">
+            <button id="sidenav-controller" class="sidenav-button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href="#" class="text-black">
+                <i class="fa fa-eye"></i>
+                <span>مشاهده رزونه من</span>
+            </a>
+            <a href="#">ارتباط با ما</a>
+            <a href="#">CVGen</a>
+        </header>
+        <main class="mt-5 p-2">
+            <!-- Button trigger modal -->
+            <div class="d-flex justify-content-between mb-3">
+                <h4>سوابق (تحصیلی)</h4>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <span>
+                        <i class="fa fa-plus"></i>
+                        افزودن سابقه (تحصیلی)
+                    </span>
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">افزودن سابقه تحصیلی</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post">
+                                <div class="mb-3">
+                                    <label for="school-name" class="form-label">نام دانشگاه/موسسه</label>
+                                    <input type="text" class="form-control" id="school-name" placeholder="دانشکده فنی و حرفه ای انقلاب اسلامی">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="school-logo" class="form-label">لوگو</label>
+                                    <input type="file" class="form-control" id="school-logo" placeholder="سیویژن" accept=".jpg, .jpeg, .png">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="start-date" class="form-label">از</label>
+                                    <input type="text" class="form-control expDate" id="start-date" placeholder="1399/07">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="end-date" class="form-label">تا</label>
+                                    <input type="text" class="form-control expDate" id="end-date" placeholder="1401/03">
+                                </div>
+                                <button type="submit" class="btn btn-primary">افزودن</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="all-exp">
+                <div class="exp-item d-flex justify-content-between align-items-center mb-2 bg-light p-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/fa/thumb/9/9f/Enghelab_technical_college_logo.svg/1200px-Enghelab_technical_college_logo.svg.png" alt="دانشکده انقلاب اسلامی">
+                    <h4 class="fs-6">دانشکده فنی و حرفه ای انقلاب اسلامی</h4>
+                    <h4 class="fs-6">
+                        از
+                        <span class="exp-start-date">1399/07</span>
+                        تا
+                        <span class="exp-end-date">1401/03</span>
+                        مشغول تحصیل بودم
+                    </h4>
+                </div>
+                <div class="exp-item d-flex justify-content-between align-items-center mb-2 bg-light p-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/fa/thumb/9/9f/Enghelab_technical_college_logo.svg/1200px-Enghelab_technical_college_logo.svg.png" alt="دانشکده انقلاب اسلامی">
+                    <h4 class="fs-6">دانشکده فنی و حرفه ای انقلاب اسلامی</h4>
+                    <h4 class="fs-6">
+                        از
+                        <span class="exp-start-date">1399/07</span>
+                        تا
+                        <span class="exp-end-date">1401/03</span>
+                        مشغول تحصیل بودم
+                    </h4>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+{% endblock %}

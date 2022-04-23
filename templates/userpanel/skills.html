@@ -1,177 +1,139 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+{% extends 'userpanel/shared/_MainLayout.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Afshar Sharifi">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title -->
-    <title>CVGen - رزومه ساز سیویژن</title>
 
-    <!-- CSS Reset -->
-    <link rel="stylesheet" href="../css/reset.css">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.rtl.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
-    <!-- My Styles -->
-    <link rel="stylesheet" href="../css/user-panel.css">
-</head>
+{% block page_title %}
+<title>مهارت ها - سیویژن</title>
+{% endblock %}
 
-<body>
-    <section class="user-panel">
-        <div class="sidenav d-block">
-            <div class="profile-info d-flex justify-content-around align-items-center border-bottom mb-3">
-                <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" alt="">
-                <div class="pt-3">
-                    <p class="fs-5 text-white">افشار شریفی</p>
-                </div>
-            </div>
-            <div class="sidenav-items">
-                <a href="./basic-info.html">
-                    <i class="fa fa-user"></i>
-                    <span>مشخصات</span>
-                </a>
-                <a class="selected-item" href="./skills.html">
-                    <i class="fas fa-brain"></i>
-                    <span>مهارت ها</span>
-                </a>
-                <a href="./projects.html">
-                    <i class="fas fa-braille"></i>
-                    <span>نمونه کار ها</span>
-                </a>
-                <a href="./experiences-work.html">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>سوابق شغلی</span>
-                </a>
-                <a href="./experiences-study.html">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>سوابق تحصیلی</span>
-                </a>
-                <a href="./messages.html">
-                    <i class="fas fa-envelope"></i>
-                    <span>پیام ها</span>
-                </a>
+{% block content %}
+<section class="user-panel">
+    <div class="sidenav d-block">
+        <div class="profile-info d-flex justify-content-around align-items-center border-bottom mb-3">
+            <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" alt="">
+            <div class="pt-3">
+                <p class="fs-5 text-white">افشار شریفی</p>
             </div>
         </div>
-        <div class="maincontent w-80">
-            <header class="py-2 px-4 d-flex align-items-center justify-content-between">
-                <button id="sidenav-controller" class="sidenav-button">
-                    <i class="fa fa-bars"></i>
+        <div class="sidenav-items">
+            <a href="./basic-info.html">
+                <i class="fa fa-user"></i>
+                <span>مشخصات</span>
+            </a>
+            <a class="selected-item" href="./skills.html">
+                <i class="fas fa-brain"></i>
+                <span>مهارت ها</span>
+            </a>
+            <a href="./projects.html">
+                <i class="fas fa-braille"></i>
+                <span>نمونه کار ها</span>
+            </a>
+            <a href="./experiences-work.html">
+                <i class="fas fa-calendar-alt"></i>
+                <span>سوابق شغلی</span>
+            </a>
+            <a href="./experiences-study.html">
+                <i class="fas fa-calendar-alt"></i>
+                <span>سوابق تحصیلی</span>
+            </a>
+            <a href="./messages.html">
+                <i class="fas fa-envelope"></i>
+                <span>پیام ها</span>
+            </a>
+        </div>
+    </div>
+    <div class="maincontent w-80">
+        <header class="py-2 px-4 d-flex align-items-center justify-content-between">
+            <button id="sidenav-controller" class="sidenav-button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href="#" class="text-black">
+                <i class="fa fa-eye"></i>
+                <span>مشاهده رزونه من</span>
+            </a>
+            <a href="#">ارتباط با ما</a>
+            <a href="#"> CVGen</a>
+        </header>
+        <main class="mt-5 p-2">
+            <!-- Button trigger modal -->
+            <div class="d-flex justify-content-between mb-3">
+                <h4>مهارت ها</h4>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <span>
+                        <i class="fa fa-plus"></i>
+                        افزودن مهارت
+                    </span>
                 </button>
-                <a href="#" class="text-black">
-                    <i class="fa fa-eye"></i>
-                    <span>مشاهده رزونه من</span>
-                </a>
-                <a href="#">ارتباط با ما</a>
-                <a href="#"> CVGen</a>
-            </header>
-            <main class="mt-5 p-2">
-                <!-- Button trigger modal -->
-                <div class="d-flex justify-content-between mb-3">
-                    <h4>مهارت ها</h4>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <span>
-                            <i class="fa fa-plus"></i>
-                            افزودن مهارت
-                        </span>
-                    </button>
-                </div>
+            </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">افزودن مهارت</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form method="post">
-                                    <div class="mb-3">
-                                        <label for="skill-title" class="form-label">نام مهارت</label>
-                                        <input type="text" class="form-control" id="skill-title" placeholder="پایتون">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="skill-percentage" class="form-label">درصد مهارت</label>
-                                        <input type="number" class="form-control" id="skill-percentage" min="0" max="100" placeholder="80">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">افزودن</button>
-                                </form>
-                            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">افزودن مهارت</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post">
+                                <div class="mb-3">
+                                    <label for="skill-title" class="form-label">نام مهارت</label>
+                                    <input type="text" class="form-control" id="skill-title" placeholder="پایتون">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="skill-percentage" class="form-label">درصد مهارت</label>
+                                    <input type="number" class="form-control" id="skill-percentage" min="0" max="100" placeholder="80">
+                                </div>
+                                <button type="submit" class="btn btn-primary">افزودن</button>
+                            </form>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="all-skills">
-                    <div class="skill-item d-flex justify-content-between align-items-center mb-2">
-                        <h5>پایتون</h5>
-                        <div class="progress w-75">
-                            <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                        </div>
-                        <div>
-                            <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                            <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
-                        </div>
+            <div class="all-skills">
+                <div class="skill-item d-flex justify-content-between align-items-center mb-2">
+                    <h5>پایتون</h5>
+                    <div class="progress w-75">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
                     </div>
-                    <div class="skill-item d-flex justify-content-between align-items-center mb-2">
-                        <h5>پایتون</h5>
-                        <div class="progress w-75">
-                            <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                        </div>
-                        <div>
-                            <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                            <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
-                        </div>
-                    </div>
-                    <div class="skill-item d-flex justify-content-between align-items-center mb-2">
-                        <h5>پایتون</h5>
-                        <div class="progress w-75">
-                            <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                        </div>
-                        <div>
-                            <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                            <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
-                        </div>
-                    </div>
-                    <div class="skill-item d-flex justify-content-between align-items-center mb-2">
-                        <h5>پایتون</h5>
-                        <div class="progress w-75">
-                            <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                        </div>
-                        <div>
-                            <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                            <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
-                        </div>
+                    <div>
+                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
+                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
                     </div>
                 </div>
-            </main>
-        </div>
-    </section>
-
-    <!-- Bootstrap -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Font Awesome -->
-    <script src="../vendor/fontawesome/js/all.min.js"></script>
-
-    <script>
-        document.getElementById("sidenav-controller").onclick = function() {
-            var sidenavElm = document.getElementsByClassName("sidenav")[0]
-
-            if (sidenavElm.classList.contains("d-block")) {
-                sidenavElm.classList.remove("d-block")
-                sidenavElm.classList.add("d-none")
-                document.getElementsByClassName("maincontent")[0].classList.remove("w-80")
-                document.getElementsByClassName("maincontent")[0].classList.add("w-100")
-            } else {
-                sidenavElm.classList.remove("d-none")
-                sidenavElm.classList.add("d-block")
-                document.getElementsByClassName("maincontent")[0].classList.remove("w-100")
-                document.getElementsByClassName("maincontent")[0].classList.add("w-80")
-            }
-        }
-    </script>
-</body>
-
-</html>
+                <div class="skill-item d-flex justify-content-between align-items-center mb-2">
+                    <h5>پایتون</h5>
+                    <div class="progress w-75">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                    <div>
+                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
+                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="skill-item d-flex justify-content-between align-items-center mb-2">
+                    <h5>پایتون</h5>
+                    <div class="progress w-75">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                    <div>
+                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
+                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="skill-item d-flex justify-content-between align-items-center mb-2">
+                    <h5>پایتون</h5>
+                    <div class="progress w-75">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                    <div>
+                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
+                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+{% endblock %}

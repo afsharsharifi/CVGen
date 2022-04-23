@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block page_title %} {% endblock %}
+    {% include 'userpanel/shared/_HeaderReferences.html' %}
+    {% block header_ref %} {% endblock %}
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+    {% include 'userpanel/shared/_FooterReferences.html' %}
+    {% block footer_ref %} {% endblock %}
+    <script>
+        document.getElementById("sidenav-controller").onclick = function() {
+            var sidenavElm = document.getElementsByClassName("sidenav")[0]
+
+            if (sidenavElm.classList.contains("d-block")) {
+                sidenavElm.classList.remove("d-block")
+                sidenavElm.classList.add("d-none")
+                document.getElementsByClassName("maincontent")[0].classList.remove("w-80")
+                document.getElementsByClassName("maincontent")[0].classList.add("w-100")
+            } else {
+                sidenavElm.classList.remove("d-none")
+                sidenavElm.classList.add("d-block")
+                document.getElementsByClassName("maincontent")[0].classList.remove("w-100")
+                document.getElementsByClassName("maincontent")[0].classList.add("w-80")
+            }
+        }
+    </script>
+</body>
+
+</html>
