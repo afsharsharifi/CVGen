@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="maincontent w-80">
-        <header class="py-2 px-4 d-flex align-items-center justify-content-between">
+        <header class="py-2 px-4 d-flex align-items-center justify-content-between index-1">
             <button id="sidenav-controller" class="sidenav-button">
                 <i class="fa fa-bars"></i>
             </button>
@@ -56,6 +56,7 @@
         </header>
         <main class="mt-5 p-2">
             <form method="post" autocomplete="off">
+                {% csrf_token %}
                 <div class="d-flex justify-content-between mb-3">
                     <h4>اطلاعات پایه</h4>
                     <button class="btn-primary rounded-1 shadow">
@@ -65,46 +66,101 @@
                 </div>
                 <div class="row">
                     <div class="form-floating col-6 col-md-3 mb-2">
-                        <input type="text" class="form-control" id="firstname" placeholder="افشار" value="افشار">
+                        <input name="firstname" type="text" class="form-control" id="firstname" placeholder="افشار" value="{{ user_info.firstname }}">
                         <label for="firstname">نام</label>
                     </div>
                     <div class="form-floating col-6 col-md-3 mb-2">
-                        <input type="text" class="form-control" id="lastname" placeholder="شریفی" value="شریفی">
+                        <input name="lastname" type="text" class="form-control" id="lastname" placeholder="شریفی" value="{{ user_info.lastname }}">
                         <label for="lastname">نام خانوادگی</label>
                     </div>
                     <div class="form-floating col-6 col-md-3 mb-2">
-                        <input type="text" class="form-control" id="position" placeholder="توسعه دهنده بکند" value="توسعه دهنده بکند">
+                        <input name="position" type="text" class="form-control" id="position" placeholder="توسعه دهنده بکند" value="{{ user_info.position }}">
                         <label for="position">عنوان شغلی</label>
                     </div>
                     <div class="form-floating col-6 col-md-3 mb-2">
-                        <input type="number" class="form-control" id="birthyear" placeholder="1380" value="1380" min="1330" max="1401">
+                        <input name="birthyear" type="number" class="form-control" id="birthyear" placeholder="1380" value="{{ user_info.birthyear }}" min="1330" max="1401">
                         <label for="birthyear">سال تولد</label>
                     </div>
                     <div class="form-floating col-6 col-md-4 mb-2">
-                        <input type="email" class="form-control" id="email" placeholder="afsharsharifi2020@gmail.com" value="afsharsharifi2020@gmail.com">
+                        <input name="email" type="email" class="form-control" id="email" placeholder="afsharsharifi2020@gmail.com" value="{{ user_info.email }}">
                         <label for="email">ایمیل</label>
                     </div>
                     <div class="form-floating col-6 col-md-4 mb-2">
-                        <input type="tel" class="form-control" id="phone" placeholder="09012095461" value="09012095461">
+                        <input name="phone" type="tel" class="form-control" id="phone" placeholder="09012095461" value="{{ user_info.mobile }}">
                         <label for="phone">تلفن همراه</label>
                     </div>
                     <div class="form-floating col-6 col-md-4 mb-2">
-                        <input type="text" class="form-control" id="address" placeholder="تهران" value="تهران">
+                        <input name="city" type="text" class="form-control" id="address" placeholder="تهران" value="{{ user_info.city }}">
                         <label for="phone">محل سکونت</label>
                     </div>
                     <div class="col-12 col-md-12 mb-4">
                         <label for="select-template">انتخاب قالب</label>
-                        <select class="form-select" aria-label="Default select example" id="select-template">
+                        <select name="select-template" class="form-select" aria-label="Default select example" id="select-template">
+                            {{ user_info.template }}
+                            {% if user_info.template == "1" %}
                             <option value="1" selected>Creative CV</option>
                             <option value="2">I’mRex</option>
                             <option value="3">Material CV</option>
                             <option value="4">Material Resume</option>
                             <option value="5">Right Resume</option>
+                            {% endif %}
+                            {% if user_info.template == "2" %}
+                            <option value="1">Creative CV</option>
+                            <option value="2" selected>I’mRex</option>
+                            <option value="3">Material CV</option>
+                            <option value="4">Material Resume</option>
+                            <option value="5">Right Resume</option>
+                            {% endif %}
+                            {% if user_info.template == "3" %}
+                            <option value="1">Creative CV</option>
+                            <option value="2">I’mRex</option>
+                            <option value="3" selected>Material CV</option>
+                            <option value="4">Material Resume</option>
+                            <option value="5">Right Resume</option>
+                            {% endif %}
+                            {% if user_info.template == "4" %}
+                            <option value="1">Creative CV</option>
+                            <option value="2">I’mRex</option>
+                            <option value="3">Material CV</option>
+                            <option value="4" selected>Material Resume</option>
+                            <option value="5">Right Resume</option>
+                            {% endif %}
+                            {% if user_info.template == "5" %}
+                            <option value="1">Creative CV</option>
+                            <option value="2">I’mRex</option>
+                            <option value="3">Material CV</option>
+                            <option value="4">Material Resume</option>
+                            <option value="5" selected>Right Resume</option>
+                            {% endif %}
                         </select>
                     </div>
-                    <div class="form-floating">
-                        <textarea class="form-control h-300px" placeholder="درباره من" id="about-me" rows="5"></textarea>
+                    <div class="form-floating mb-2">
+                        <textarea name="about" class="form-control h-300px" placeholder="درباره من" id="about-me" rows="5">{{ user_info.about }}</textarea>
                         <label for="about-me">درباره من</label>
+                    </div>
+                    <div class="form-floating col-6 col-md-4 mb-2">
+                        <input name="instagram_id" type="text" class="form-control" id="instagram_id" placeholder="the.afshar" value="{{ user_info.instagram }}">
+                        <label for="instagram_id">اینستاگرام</label>
+                    </div>
+                    <div class="form-floating col-6 col-md-4 mb-2">
+                        <input name="telegram_id" type="text" class="form-control" id="telegram_id" placeholder="afshar_sharifi" value="{{ user_info.telegram }}">
+                        <label for="telegram_id">تلگرام</label>
+                    </div>
+                    <div class="form-floating col-6 col-md-4 mb-2">
+                        <input name="whtasapp_id" type="text" class="form-control" id="whtasapp_id" placeholder="+989012095461" value="{{ user_info.whatsapp }}">
+                        <label for="whtasapp_id">واتساپ</label>
+                    </div>
+                    <div class="form-floating col-6 col-md-4 mb-2">
+                        <input name="github_id" type="text" class="form-control" id="github_id" placeholder="afsharsharifi" value="{{ user_info.github }}">
+                        <label for="github_id">گیت هاب</label>
+                    </div>
+                    <div class="form-floating col-6 col-md-4 mb-2">
+                        <input name="gitlab_id" type="text" class="form-control" id="gitlab_id" placeholder="afsharsharifi" value="{{ user_info.gitlab }}">
+                        <label for="gitlab_id">گیت لب</label>
+                    </div>
+                    <div class="form-floating col-6 col-md-4 mb-2">
+                        <input name="stackoverflow_id" type="text" class="form-control" id="stackoverflow_id" placeholder="13569971" value="{{ user_info.stackoverflow }}">
+                        <label for="stackoverflow_id">استک اور فلو</label>
                     </div>
                 </div>
             </form>

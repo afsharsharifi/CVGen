@@ -25,5 +25,13 @@ class UserBasicInfo(models.Model):
     template = models.CharField(max_length=40, choices=TEMPLATE_CHOICES, default='1')
     about = models.TextField()
 
+    # Social Media
+    instagram = models.CharField(max_length=400, default="")
+    telegram = models.CharField(max_length=400, default="")
+    whatsapp = models.CharField(max_length=400, default="")
+    github = models.CharField(max_length=400, default="")
+    gitlab = models.CharField(max_length=400, default="")
+    stackoverflow = models.CharField(max_length=400, default="")
+
     def __str__(self):
         return f"{self.username}"

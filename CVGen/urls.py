@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('header', header, name="header"),
     # path('footer', footer, name="footer"),
-    path('', include("CVGenAccounts.urls"))
+    path('', include("CVGenAccounts.urls")),
+    path('', include("CVGenBasicInfo.urls"))
 ]
 if settings.DEBUG:
     # add root static files
