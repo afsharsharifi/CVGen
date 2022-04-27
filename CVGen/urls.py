@@ -25,7 +25,11 @@ urlpatterns = [
     # path('header', header, name="header"),
     # path('footer', footer, name="footer"),
     path('', include("CVGenAccounts.urls")),
-    path('', include("CVGenBasicInfo.urls"))
+    path('', include("CVGenBasicInfo.urls")),
+    path('', include("CVGenSkills.urls")),
+    path('', include("CVGenProjects.urls")),
+    path('', include("CVGenExperiences.urls")),
+    path('', include("CVGenMessages.urls")),
 ]
 if settings.DEBUG:
     # add root static files

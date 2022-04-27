@@ -75,22 +75,23 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="post">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
                                 <div class="mb-3">
                                     <label for="project-name" class="form-label">نام پروژه</label>
-                                    <input type="text" class="form-control" id="project-name" placeholder="سیویژن">
+                                    <input name="project-name" type="text" class="form-control" id="project-name" placeholder="سیویژن">
                                 </div>
                                 <div class="mb-3">
                                     <label for="project-image" class="form-label">تصویر پروژه</label>
-                                    <input type="file" class="form-control" id="project-image" placeholder="سیویژن" accept=".jpg, .jpeg, .png">
+                                    <input name="project-image" type="file" class="form-control" id="project-image" placeholder="سیویژن" accept=".jpg, .jpeg, .png">
                                 </div>
                                 <div class="mb-3">
                                     <label for="project-link" class="form-label">لینک پروژه</label>
-                                    <input type="text" class="form-control" id="project-link" placeholder="https://cvgen.com">
+                                    <input name="project-link" type="text" class="form-control" id="project-link" placeholder="https://cvgen.com">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">توضیحات پروژه</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea name="project-description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">افزودن</button>
                             </form>
@@ -100,61 +101,19 @@
             </div>
 
             <div class="all-projects">
+                {% for project in user_projects %}
                 <div class="project-item d-flex justify-content-between align-items-center p-2 bg-light border-bottom">
                     <div class="d-flex justify-content-between align-items-center gap-3">
-                        <img src="https://www.karlancer.com/api/file/1635584089-bxW2.png">
-                        <h4>سیویژن</h4>
+                        <img src="{{ project.image.url }}">
+                        <h5>{{ project.title }}</h5>
                     </div>
                     <div>
-                        <button class="btn-action bg-warning"><a href="#"><i class="fa fa-link text-white"></i></a></button>
+                        <button class="btn-action bg-warning"><a href="{{ project.link }}"><i class="fa fa-link text-white"></i></a></button>
                         <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
                         <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
                     </div>
                 </div>
-                <div class="project-item d-flex justify-content-between align-items-center p-2 bg-light border-bottom">
-                    <div class="d-flex justify-content-between align-items-center gap-3">
-                        <img src="https://www.karlancer.com/api/file/1635584089-bxW2.png">
-                        <h4>سیویژن</h4>
-                    </div>
-                    <div>
-                        <button class="btn-action bg-warning"><a href="#"><i class="fa fa-link text-white"></i></a></button>
-                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
-                    </div>
-                </div>
-                <div class="project-item d-flex justify-content-between align-items-center p-2 bg-light border-bottom">
-                    <div class="d-flex justify-content-between align-items-center gap-3">
-                        <img src="https://www.karlancer.com/api/file/1635584089-bxW2.png">
-                        <h4>سیویژن</h4>
-                    </div>
-                    <div>
-                        <button class="btn-action bg-warning"><a href="#"><i class="fa fa-link text-white"></i></a></button>
-                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
-                    </div>
-                </div>
-                <div class="project-item d-flex justify-content-between align-items-center p-2 bg-light border-bottom">
-                    <div class="d-flex justify-content-between align-items-center gap-3">
-                        <img src="https://www.karlancer.com/api/file/1635584089-bxW2.png">
-                        <h4>سیویژن</h4>
-                    </div>
-                    <div>
-                        <button class="btn-action bg-warning"><a href="#"><i class="fa fa-link text-white"></i></a></button>
-                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
-                    </div>
-                </div>
-                <div class="project-item d-flex justify-content-between align-items-center p-2 bg-light border-bottom">
-                    <div class="d-flex justify-content-between align-items-center gap-3">
-                        <img src="https://www.karlancer.com/api/file/1635584089-bxW2.png">
-                        <h4>سیویژن</h4>
-                    </div>
-                    <div>
-                        <button class="btn-action bg-warning"><a href="#"><i class="fa fa-link text-white"></i></a></button>
-                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </main>
     </div>

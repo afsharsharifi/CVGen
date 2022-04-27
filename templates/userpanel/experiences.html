@@ -64,11 +64,11 @@
         <main class="mt-5 p-2">
             <!-- Button trigger modal -->
             <div class="d-flex justify-content-between mb-3">
-                <h4>سوابق (تحصیلی)</h4>
+                <h4>سوابق (تحصیلی/کاری)</h4>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <span>
                         <i class="fa fa-plus"></i>
-                        افزودن سابقه (تحصیلی)
+                        افزودن سابقه (تحصیلی/کاری)
                     </span>
                 </button>
             </div>
@@ -78,26 +78,34 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">افزودن سابقه تحصیلی</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">افزودن سابقه تحصیلی/کاری</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="post">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
                                 <div class="mb-3">
                                     <label for="school-name" class="form-label">نام دانشگاه/موسسه</label>
-                                    <input type="text" class="form-control" id="school-name" placeholder="دانشکده فنی و حرفه ای انقلاب اسلامی">
+                                    <input name="place-name" type="text" class="form-control" id="school-name" placeholder="دانشکده فنی و حرفه ای انقلاب اسلامی">
                                 </div>
                                 <div class="mb-3">
                                     <label for="school-logo" class="form-label">لوگو</label>
-                                    <input type="file" class="form-control" id="school-logo" placeholder="سیویژن" accept=".jpg, .jpeg, .png">
+                                    <input name="place-logo" type="file" class="form-control" id="school-logo" placeholder="سیویژن" accept=".jpg, .jpeg, .png">
                                 </div>
                                 <div class="mb-3">
                                     <label for="start-date" class="form-label">از</label>
-                                    <input type="text" class="form-control expDate" id="start-date" placeholder="1399/07">
+                                    <input name="start-date" type="text" class="form-control expDate" id="start-date" placeholder="1399/07">
                                 </div>
                                 <div class="mb-3">
                                     <label for="end-date" class="form-label">تا</label>
-                                    <input type="text" class="form-control expDate" id="end-date" placeholder="1401/03">
+                                    <input name="end-date" type="text" class="form-control expDate" id="end-date" placeholder="1401/03">
+                                </div>
+                                <div class="m-4">
+                                    <label for="exp-position-study" class="form-check-label">مشغول تحصیل بودم</label>
+                                    <input name="exp-position" type="radio" class="form-check-input" id="exp-position-study" value="no" required>
+
+                                    <label for="exp-position-work" class="form-check-label">مشغول کار بودم</label>
+                                    <input name="exp-position" type="radio" class="form-check-input" id="exp-position-work" value="yes" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary">افزودن</button>
                             </form>
