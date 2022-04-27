@@ -5,6 +5,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+# Media
+static_cdn/media_root/
+
 # C extensions
 *.so
 
