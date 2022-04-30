@@ -8,12 +8,13 @@
 
 {% block content %}
 <section class="user-panel">
-    <div class="sidenav d-block">
+    <div class="sidenav index-2 d-block">
         <div class="profile-info d-flex justify-content-around align-items-center border-bottom mb-3">
             <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" alt="">
             <div class="pt-3">
                 <p class="fs-5 text-white">افشار شریفی</p>
             </div>
+            <button id="responsive-sidenav-btn" href="#" class="index500 text-white border-0 bg-transparent d-none"><i class="fas fa-times"></i></button>
         </div>
         <div class="sidenav-items">
             <a class="selected-item" href="/userpanel/user-basic-info">
@@ -38,7 +39,7 @@
             </a>
         </div>
     </div>
-    <div class="maincontent">
+    <div class="maincontent w-100">
         <header class="py-2 px-4 d-flex align-items-center justify-content-between index-1">
             <button id="sidenav-controller" class="sidenav-button">
                 <i class="fa fa-bars"></i>
@@ -50,7 +51,7 @@
             <a href="#">ارتباط با ما</a>
             <a href="#"> CVGen</a>
         </header>
-        <main class="p-2">
+        <main class="p-2 mt-5">
             <form method="post" autocomplete="off">
                 {% csrf_token %}
                 <div class="d-flex justify-content-between mb-3">

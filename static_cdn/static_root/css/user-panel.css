@@ -17,14 +17,15 @@ body {
     right: 0;
     background-color: #343a40;
     overflow: hidden;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-@keyframes show-side {
-    0%{
+@keyframes showside {
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
@@ -76,6 +77,14 @@ body {
     width: 80% !important;
 }
 
+.w-20 {
+    width: 20% !important;
+}
+
+.w-260 {
+    width: 260px !important;
+}
+
 .h-300px {
     height: 300px !important;
 }
@@ -112,4 +121,12 @@ body {
 
 .index-1 {
     z-index: 100;
+}
+
+.index-2 {
+    z-index: 200;
+}
+
+.index-5 {
+    z-index: 500;
 }

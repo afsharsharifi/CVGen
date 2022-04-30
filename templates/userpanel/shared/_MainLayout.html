@@ -16,32 +16,51 @@
     {% include 'userpanel/shared/_FooterReferences.html' %}
     {% block footer_ref %} {% endblock %}
     <script>
-        document.getElementById("sidenav-controller").onclick = function() {
+        if (screen.width <= 760) {
+            document.getElementsByClassName("sidenav")[0].classList.add("d-none")
+            document.getElementsByClassName("maincontent")[0].classList.remove("w-80")
+            document.getElementsByClassName("maincontent")[0].classList.add("w-100")
+        } else {
+            document.getElementsByClassName("sidenav")[0].style.display = "block"
+            document.getElementsByClassName("maincontent")[0].classList.remove("w-100")
+            document.getElementsByClassName("maincontent")[0].classList.add("w-80")
+        }
+
+        function SidenavController() {
             var sidenavElm = document.getElementsByClassName("sidenav")[0]
             var maincontentElm = document.getElementsByClassName("maincontent")[0]
 
-            if (sidenavElm.style.width == '260px') {
-                if (screen.width <= 768) {
-                    sidenavElm.style.width = "0";
-                    maincontentElm.style.marginRight = "0";
-                    maincontentElm.style.width = "100%";
+            if (screen.width >= 760) {
+                if (sidenavElm.classList.contains("d-block")) {
+                    console.log("in if 1");
+                    sidenavElm.classList.remove("d-block")
+                    sidenavElm.classList.add("d-none")
+                    maincontentElm.classList.remove("w-80")
+                    maincontentElm.classList.add("w-100")
                 } else {
-                    sidenavElm.style.width = "0";
-                    maincontentElm.style.marginRight = "0";
-                    maincontentElm.style.width = "100%";
+                    console.log("in else 1");
+                    sidenavElm.classList.remove("d-none")
+                    sidenavElm.classList.add("d-block")
+                    maincontentElm.classList.remove("w-100")
+                    maincontentElm.classList.add("w-80")
                 }
             } else {
-                if (screen.width <= 768) {
-                    sidenavElm.style.width = "90vw";
-                    maincontentElm.style.marginRight = "90vw";
-                    maincontentElm.style.width = "80%";
+                if (sidenavElm.classList.contains("d-none")) {
+                    console.log("in if 2");
+                    sidenavElm.classList.remove("d-none")
+                    sidenavElm.classList.add("w-260")
+                    document.getElementById("responsive-sidenav-btn").classList.remove("d-none")
                 } else {
-                    sidenavElm.style.width = "260px";
-                    maincontentElm.style.marginRight = "260px";
-                    maincontentElm.style.width = "80%";
+                    console.log("in else 2");
+                    sidenavElm.classList.add("d-none")
+                    sidenavElm.classList.remove("w-260")
+                    document.getElementById("responsive-sidenav-btn").classList.add("d-none")
                 }
             }
         }
+
+        document.getElementById("sidenav-controller").onclick = SidenavController
+        document.getElementById("responsive-sidenav-btn").onclick = SidenavController
     </script>
 </body>
 

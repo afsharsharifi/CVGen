@@ -15,12 +15,13 @@
 
 {% block content %}
 <section class="user-panel">
-    <div class="sidenav d-block">
+    <div class="sidenav index-2 d-block">
         <div class="profile-info d-flex justify-content-around align-items-center border-bottom mb-3">
             <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" alt="">
             <div class="pt-3">
                 <p class="fs-5 text-white">افشار شریفی</p>
             </div>
+            <button id="responsive-sidenav-btn" href="#" class="index500 text-white border-0 bg-transparent d-none"><i class="fas fa-times"></i></button>
         </div>
         <div class="sidenav-items">
             <a href="/userpanel/user-basic-info">
@@ -35,7 +36,7 @@
                 <i class="fas fa-braille"></i>
                 <span>نمونه کار ها</span>
             </a>
-            <a href="/userpanel/user-experiences">
+            <a class="selected-item" href="/userpanel/user-experiences">
                 <i class="fas fa-calendar-alt"></i>
                 <span>سوابق شغلی/تحصیلی</span>
             </a>
@@ -45,7 +46,7 @@
             </a>
         </div>
     </div>
-    <div class="maincontent w-80">
+    <div class="maincontent w-100">
         <header class="py-2 px-4 d-flex align-items-center justify-content-between">
             <button id="sidenav-controller" class="sidenav-button">
                 <i class="fa fa-bars"></i>

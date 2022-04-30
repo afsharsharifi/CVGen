@@ -10,14 +10,14 @@ body {
 }
 
 .sidenav {
-    width: 260px;
+    width: 20%;
     height: 100vh;
     position: fixed;
     top: 0;
     right: 0;
     background-color: #343a40;
     overflow: hidden;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 @keyframes showside {
@@ -64,8 +64,7 @@ body {
 }
 
 .maincontent {
-    margin-right: 260px;
-    width: 80%;
+    float: left;
 }
 
 .maincontent header {
@@ -76,6 +75,14 @@ body {
 
 .w-80 {
     width: 80% !important;
+}
+
+.w-20 {
+    width: 20% !important;
+}
+
+.w-260 {
+    width: 260px !important;
 }
 
 .h-300px {
@@ -114,4 +121,12 @@ body {
 
 .index-1 {
     z-index: 100;
+}
+
+.index-2 {
+    z-index: 200;
+}
+
+.index-5 {
+    z-index: 500;
 }
