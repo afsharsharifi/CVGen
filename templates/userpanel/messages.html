@@ -16,27 +16,23 @@
             </div>
         </div>
         <div class="sidenav-items">
-            <a href="./basic-info.html">
+            <a href="/userpanel/user-basic-info">
                 <i class="fa fa-user"></i>
                 <span>مشخصات</span>
             </a>
-            <a href="./skills.html">
+            <a href="/userpanel/user-skills">
                 <i class="fas fa-brain"></i>
                 <span>مهارت ها</span>
             </a>
-            <a href="./projects.html">
+            <a href="/userpanel/user-projects">
                 <i class="fas fa-braille"></i>
                 <span>نمونه کار ها</span>
             </a>
-            <a href="./experiences-work.html">
+            <a href="/userpanel/user-experiences">
                 <i class="fas fa-calendar-alt"></i>
-                <span>سوابق شغلی</span>
+                <span>سوابق شغلی/تحصیلی</span>
             </a>
-            <a href="./experiences-study.html">
-                <i class="fas fa-calendar-alt"></i>
-                <span>سوابق تحصیلی</span>
-            </a>
-            <a class="selected-item" href="./messages.html">
+            <a class="selected-item" href="/userpanel/user-messages">
                 <i class="fas fa-envelope"></i>
                 <span>پیام ها</span>
             </a>
@@ -57,21 +53,20 @@
         <main class="mt-5 p-2">
             <h4>پیام ها</h4>
             <div class="all-msg">
-                <div class="msg-tem d-flex justify-content-between align-items-center mb-2 bg-light p-3">
-                    <h4 class="fs-6">موضوع پیام</h4>
-                    <h4 class="fs-6">از طرف</h4>
-                    <h4 class="fs-6"><a href="#" class="btn bg-primary text-light">مشاهده</a></h4>
+                {% for msg in user_messages %}
+                <div class="msg-tem d-flex flex-column bg-light mb-4">
+                    <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                        <h4 class="fs-6">{{ msg.title }}</h4>
+                        <h4 class="fs-6">{{ msg.fullname }}</h4>
+                        <h4 class="fs-6">{{ msg.email }}</h4>
+                    </div>
+                    <div>
+                        <p class="text-muted">
+                            {{ msg.message }}
+                        </p>
+                    </div>
                 </div>
-                <div class="msg-tem d-flex justify-content-between align-items-center mb-2 bg-light p-3">
-                    <h4 class="fs-6">موضوع پیام</h4>
-                    <h4 class="fs-6">از طرف</h4>
-                    <h4 class="fs-6"><a href="#" class="btn bg-primary text-light">مشاهده</a></h4>
-                </div>
-                <div class="msg-tem d-flex justify-content-between align-items-center mb-2 bg-light p-3">
-                    <h4 class="fs-6">موضوع پیام</h4>
-                    <h4 class="fs-6">از طرف</h4>
-                    <h4 class="fs-6"><a href="#" class="btn bg-primary text-light">مشاهده</a></h4>
-                </div>
+                {% endfor %}
             </div>
         </main>
     </div>

@@ -23,27 +23,23 @@
             </div>
         </div>
         <div class="sidenav-items">
-            <a href="./basic-info.html">
+            <a href="/userpanel/user-basic-info">
                 <i class="fa fa-user"></i>
                 <span>مشخصات</span>
             </a>
-            <a href="./skills.html">
+            <a href="/userpanel/user-skills">
                 <i class="fas fa-brain"></i>
                 <span>مهارت ها</span>
             </a>
-            <a href="./projects.html">
+            <a href="/userpanel/user-projects">
                 <i class="fas fa-braille"></i>
                 <span>نمونه کار ها</span>
             </a>
-            <a href="./experiences-work.html">
+            <a href="/userpanel/user-experiences">
                 <i class="fas fa-calendar-alt"></i>
-                <span>سوابق شغلی</span>
+                <span>سوابق شغلی/تحصیلی</span>
             </a>
-            <a class="selected-item" href="./experiences-study.html">
-                <i class="fas fa-calendar-alt"></i>
-                <span>سوابق تحصیلی</span>
-            </a>
-            <a href="./messages.html">
+            <a href="/userpanel/user-messages">
                 <i class="fas fa-envelope"></i>
                 <span>پیام ها</span>
             </a>
@@ -115,30 +111,45 @@
             </div>
 
             <div class="all-exp">
+                {% for exp in user_experiences %}
                 <div class="exp-item d-flex justify-content-between align-items-center mb-2 bg-light p-4">
-                    <img src="https://upload.wikimedia.org/wikipedia/fa/thumb/9/9f/Enghelab_technical_college_logo.svg/1200px-Enghelab_technical_college_logo.svg.png" alt="دانشکده انقلاب اسلامی">
-                    <h4 class="fs-6">دانشکده فنی و حرفه ای انقلاب اسلامی</h4>
+                    <img src="{{ exp.logo.url }}" alt="عکس {{ exp.name }}">
+                    <h4 class="fs-6">{{ exp.name }}</h4>
                     <h4 class="fs-6">
                         از
-                        <span class="exp-start-date">1399/07</span>
+                        <span class="exp-start-date">{{ exp.start }}</span>
                         تا
-                        <span class="exp-end-date">1401/03</span>
-                        مشغول تحصیل بودم
+                        <span class="exp-end-date">{{ exp.end }}</span>
+                        مشغول
+                        <span>
+                            {% if exp.isWork %}
+                            کار
+                            {% else %}
+                            تحصیل
+                            {% endif %}
+                        </span>
+                        بودم
                     </h4>
                 </div>
-                <div class="exp-item d-flex justify-content-between align-items-center mb-2 bg-light p-4">
-                    <img src="https://upload.wikimedia.org/wikipedia/fa/thumb/9/9f/Enghelab_technical_college_logo.svg/1200px-Enghelab_technical_college_logo.svg.png" alt="دانشکده انقلاب اسلامی">
-                    <h4 class="fs-6">دانشکده فنی و حرفه ای انقلاب اسلامی</h4>
-                    <h4 class="fs-6">
-                        از
-                        <span class="exp-start-date">1399/07</span>
-                        تا
-                        <span class="exp-end-date">1401/03</span>
-                        مشغول تحصیل بودم
-                    </h4>
-                </div>
+                {% endfor %}
             </div>
         </main>
     </div>
 </section>
+{% endblock %}
+
+{% block footer_ref %}
+<!-- Persian Date OBJ -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".expDate").pDatepicker({
+            initialValue: false,
+            observer: true,
+            format: 'YYYY/MM',
+            persianDigit: false,
+            autoClose: true,
+            maxDate: "today"
+        });
+    });
+</script>
 {% endblock %}

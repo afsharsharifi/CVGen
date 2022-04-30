@@ -24,12 +24,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('header', header, name="header"),
     # path('footer', footer, name="footer"),
-    path('', include("CVGenAccounts.urls")),
-    path('', include("CVGenBasicInfo.urls")),
-    path('', include("CVGenSkills.urls")),
-    path('', include("CVGenProjects.urls")),
-    path('', include("CVGenExperiences.urls")),
-    path('', include("CVGenMessages.urls")),
+    path('userpanel/', include("CVGenAccounts.urls")),
+    path('userpanel/', include("CVGenBasicInfo.urls")),
+    path('userpanel/', include("CVGenSkills.urls")),
+    path('userpanel/', include("CVGenProjects.urls")),
+    path('userpanel/', include("CVGenExperiences.urls")),
+    path('userpanel/', include("CVGenMessages.urls")),
 ]
 if settings.DEBUG:
     # add root static files

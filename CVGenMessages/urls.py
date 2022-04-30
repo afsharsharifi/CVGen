@@ -1,6 +1,6 @@
 from django.urls import path
-from CVGenMessages.views import *
+from CVGenMessages.views import user_messages
 
 urlpatterns = [
-    # path('user-basic-info', user_basic_info),
+    path('user-messages', user_messages),
 ]
