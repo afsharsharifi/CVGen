@@ -10,3 +10,6 @@ class UserMessage(models.Model):
     title = models.CharField(max_length=80)
     email = models.EmailField()
     message = models.TextField()
+
+    def __str__(self):
+        return f"{self.username}"

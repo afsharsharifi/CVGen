@@ -24,3 +24,6 @@ class UserExperience(models.Model):
     isWork = models.BooleanField()
     start = models.CharField(max_length=10)
     end = models.CharField(max_length=10)
+
+    def __str__(self):
+        return f"{self.username}"
