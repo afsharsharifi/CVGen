@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('header', header, name="header"),
     # path('footer', footer, name="footer"),
-    path('userpanel/', include("CVGenAccounts.urls")),
+    path('', include("CVGenAccounts.urls")),
     path('userpanel/', include("CVGenBasicInfo.urls")),
     path('userpanel/', include("CVGenSkills.urls")),
     path('userpanel/', include("CVGenProjects.urls")),
