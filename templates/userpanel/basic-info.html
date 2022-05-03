@@ -52,7 +52,7 @@
             <a href="#"> CVGen</a>
         </header>
         <main class="p-2 mt-5">
-            <form method="post" autocomplete="off">
+            <form method="post" autocomplete="off" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="d-flex justify-content-between mb-3">
                     <h4>اطلاعات پایه</h4>
@@ -78,6 +78,11 @@
                         <input name="birthyear" type="number" class="form-control" id="birthyear" placeholder="1380" value="{{ user_info.birthyear }}" min="1330" max="1401">
                         <label for="birthyear">سال تولد</label>
                     </div>
+                    <div class="col-12 col-md-12 mb-2">
+                        <label for="profile-image" class="form-label">انتخاب تصویر پروفایل</label>
+                        <input name="profile_image" class="form-control" type="file" id="profile-image">
+                    </div>
+
                     <div class="form-floating col-6 col-md-4 mb-2">
                         <input name="email" type="email" class="form-control" id="email" placeholder="afsharsharifi2020@gmail.com" value="{{ user_info.email }}">
                         <label for="email">ایمیل</label>

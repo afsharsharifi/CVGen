@@ -1,5 +1,3 @@
-import jdatetime
-import datetime
 from django.shortcuts import render
 
 from CVGenExperiences.models import UserExperience

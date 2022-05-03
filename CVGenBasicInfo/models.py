@@ -1,7 +1,20 @@
+import os
 from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+
+def get_filename_ext(filepath):
+    base_name = os.path.basename(filepath)
+    name, ext = os.path.splitext(base_name)
+    return name, ext
+
+
+def upload_image_path_profiles(instance, filename):
+    name, ext = get_filename_ext(filename)
+    final_name = f"profile {instance.username}-{instance.birthyear}{ext}"
+    return f"user_images/profiles/{final_name}"
 
 
 TEMPLATE_CHOICES = (
@@ -24,6 +37,7 @@ class UserBasicInfo(models.Model):
     city = models.CharField(max_length=200)
     template = models.CharField(max_length=40, choices=TEMPLATE_CHOICES, default='1')
     about = models.TextField()
+    profile_image = models.ImageField(upload_to=upload_image_path_profiles, null=True, blank=True)
 
     # Social Media
     instagram = models.CharField(max_length=400, default="")

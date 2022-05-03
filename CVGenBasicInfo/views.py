@@ -22,6 +22,7 @@ def user_basic_info(request):
         city = request.POST.get('city')
         template = request.POST.get('select-template')
         about = request.POST.get('about')
+        profile_image = request.FILES.get('profile_image')
 
         if this_user_info:
             this_user_info.firstname = firstname
@@ -33,6 +34,7 @@ def user_basic_info(request):
             this_user_info.city = city
             this_user_info.template = template
             this_user_info.about = about
+            this_user_info.profile_image = profile_image
             this_user_info.save()
         else:
             UserBasicInfo.objects.create(
@@ -45,7 +47,8 @@ def user_basic_info(request):
                 mobile=phone,
                 city=city,
                 template=template,
-                about=about
+                about=about,
+                profile_image=profile_image,
             )
 
     context = {

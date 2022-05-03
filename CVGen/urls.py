@@ -30,6 +30,7 @@ urlpatterns = [
     path('userpanel/', include("CVGenProjects.urls")),
     path('userpanel/', include("CVGenExperiences.urls")),
     path('userpanel/', include("CVGenMessages.urls")),
+    path('', include("CVGenResumes.urls")),
 ]
 if settings.DEBUG:
     # add root static files
