@@ -17,7 +17,7 @@ body {
     right: 0;
     background-color: #343a40;
     overflow: hidden;
-    transition: 0.5s;
+    animation: showside ease 0.5s forwards;
 }
 
 @keyframes showside {

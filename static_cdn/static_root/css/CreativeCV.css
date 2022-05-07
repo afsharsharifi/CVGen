@@ -24,10 +24,6 @@
     border: none;
 }
 
-.back-image {
-    background-image: url("https://demo.templateflip.com/creative-cv/images/cc-bg-1.jpg");
-}
-
 .header-user-info {
     position: relative;
     background-color: rgba(37, 77, 73, 0.7);
@@ -220,4 +216,8 @@
 .social-networks-footer a {
     color: #585a58;
     font-size: 22pt;
+}
+
+.w-220px {
+    width: 220px;
 }
