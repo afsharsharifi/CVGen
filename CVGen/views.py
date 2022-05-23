@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from CVGenMessages.models import UserMessage
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -14,5 +16,16 @@ from django.shortcuts import render
 
 
 def index(request):
+    if request.method == "POST":
+        fullname = request.POST.get('fullname')
+        title = request.POST.get('title')
+        message = request.POST.get('message')
+
+        UserMessage.objects.create(
+            username=User.objects.first(),
+            fullname=fullname,
+            title=title,
+            message=message
+        )
     context = {}
     return render(request, "index.html", context)

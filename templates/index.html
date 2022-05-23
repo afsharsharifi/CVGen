@@ -51,7 +51,11 @@
                             </li>
                         </ul>
                         <div class="d-flex">
-                            <button class="btn btn-outline-light" type="submit">همین الان یه رزومه بساز!</button>
+                            <button class="btn btn-outline-light" type="submit">
+                                <a href="/signup" class="text-white text-decoration-none">
+                                    همین الان یه رزومه بساز!
+                                </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -59,8 +63,8 @@
             <div class="header-info d-flex flex-column align-items-center justify-content-center">
                 <h1 class="text-white fw-bold mb-lg-5 text-center">با سیویژن راحت رزومه بساز...!</h1>
                 <div>
-                    <button>ورود</button>
-                    <button>ثبت نام</button>
+                    <button><a class="text-black text-decoration-none" href="/login">ورود</a></button>
+                    <button><a class="text-black text-decoration-none" href="/signup">ثبت نام</a></button>
                 </div>
             </div>
         </div>
@@ -198,16 +202,20 @@
         <div class="container mt-5">
             <div class="row justify-content-center justify-content-md-around">
                 <h4 class="fs-2 text-center mb-5">انتقاد یا پیشنهاد</h4>
-                <form>
+                <form method="post">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="custom-input col-12 col-md-6 mb-4">
-                            <input type="text" placeholder="نام و نام خانوادگی">
+                            <input name="fullname" type="text" placeholder="نام و نام خانوادگی">
                         </div>
                         <div class="custom-input col-12 col-md-6 mb-4">
-                            <input type="text" placeholder="عنوان">
+                            <input name="title" type="text" placeholder="عنوان">
                         </div>
                         <div class="col-12 custom-textarea">
-                            <textarea class="w-100" rows="10" cols="50" placeholder="متن پیام"></textarea>
+                            <textarea name="message" class="w-100" rows="10" cols="50" placeholder="متن پیام"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn bg-info text-center" type="submit">ارسال</button>
                         </div>
                     </div>
                 </form>
