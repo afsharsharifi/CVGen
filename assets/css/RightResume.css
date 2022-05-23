@@ -1,0 +1,37 @@
+.header-nav {
+    height: 50vh;
+    padding-top: 20px;
+    background-color: #4a89dc;
+}
+
+.profile-image img {
+    width: 150px;
+    border: 5px solid white;
+}
+
+.custom-btn {
+    width: 150px;
+    height: 40px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.contant-input {
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+
+.contant-input::placeholder {
+    text-align: right;
+}
+
+.btn-contact {
+    background-color: transparent;
+    border: 3px solid #4a89dc;
+    color: #4a89dc;
+    border-radius: 10px;
+    padding: 10px 20px;
+}

@@ -7,24 +7,145 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>CVGen - رزومه ساز سیویژن</title>
+    <title>رزومه {{ user_baisc_info.firstname }} {{ user_baisc_info.lastname }}</title>
 
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="{% static './css/reset.css' %}">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="{% static './vendor/bootstrap/css/bootstrap.rtl.min.css' %}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{% static './vendor/fontawesome/css/all.min.css' %}">
     <!-- My Styles -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{% static './css/RightResume.css' %}">
 </head>
 
 <body>
+    <header class="header-nav mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center container gap-3">
+            <div class="profile-image">
+                <img src="{{ profile_image }}" alt="{{ user_baisc_info.firstname }} {{ user_baisc_info.lastname }}">
+            </div>
+            <div class="name-position text-white">
+                <h1>{{ user_baisc_info.firstname }} {{ user_baisc_info.lastname }}</h1>
+                <h3>{{ user_baisc_info.position }}</h3>
+            </div>
+            <div class="social-media d-flex align-items-center justify-content-center gap-5">
+                <a href="https://instagram.com/{{ user_baisc_info.instagram }}"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/{{ user_baisc_info.telegram }}"><i class="fab fa-telegram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone={{ user_baisc_info.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://github.com/{{ user_baisc_info.github }}"><i class="fab fa-github"></i></a>
+                <a href="https://gitlab.com/{{ user_baisc_info.gitlab }}"><i class="fab fa-gitlab"></i></a>
+                <a href="https://stackoverflow.com/users/{{ user_baisc_info.stackoverflow }}"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+            <button class="custom-btn">ارسال پیام</button>
+        </div>
+    </header>
+    <section id="about-me" class="container mb-5">
+        <div class="row">
+            <div class="col-12 col-md-6 about-me-text">
+                <h4 class="fs-3">درباره من</h4>
+                <p>{{ user_baisc_info.about }}</p>
+            </div>
+            <div class="col-12 col-md-6 basic-information">
+                <h4 class="fs-3">اطلاعات من</h4>
+                <div>
+                    <h4 class="fs-4 fw-bold">سن:</h4>
+                    <span>{{ user_baisc_info.birthyear }}</span>
+                </div>
+                <div>
+                    <h4 class="fs-4 fw-bold">ایمیل:</h4>
+                    <span>{{ user_baisc_info.email }}</span>
+                </div>
+                <div>
+                    <h4 class="fs-4 fw-bold">تلفن:</h4>
+                    <span>{{ user_baisc_info.mobile }}</span>
+                </div>
+                <div>
+                    <h4 class="fs-4 fw-bold">محل زندگی:</h4>
+                    <span>{{ user_baisc_info.city }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="container mb-5">
+        <h4 class="fs-3">مهارتهای من</h4>
+        <div class="row all-skills">
+            {% for skill in user_skills %}
+            <div class="col-12 col-md-6 skill-item mb-3">
+                <h5 class="text-left">{{ skill.title }}</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-water-blue" style="width: {{ skill.percentage }}%;">{{ skill.percentage }}%</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="projects" class="container mb-5">
+        <h4 class="fs-3">پروژه های من</h4>
+        <div class="row all-projects">
+            {% for project in user_projects %}
+            <div class="col-12 col-md-6 project-item card mb-3">
+                <img class="w-100" src="{{ project.image.url }}" alt="{{ project.title }}">
+                <h3>
+                    <a href="{{ project.link }}">{{ project.title }}</a>
+                </h3>
+                <p>{{ project.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="exp" class="container mb-5">
+        <h4 class="fs-3">سوابق من</h4>
+        <div class="row my-exps mt-5">
+            {% for exp in user_experiences %}
+            <div class="col-12 col-md-6 col-lg-4 exp-item d-flex">
+                <img class="w-25" src="{{ exp.logo.url }}" alt="{{ exp.name }}">
+                <div>
+                    <h3>{{ exp.name }}</h3>
+                    <p>
+                        از {{ exp.start }}
+                        تا {{ exp.end }}
+                        مشغول
+                        {% if exp.isWork %}
+                        <span class="fst-italic">کار</span>
+                        {% else %}
+                        <span class="fst-italic">تحصیل</span>
+                        {% endif %}
+                        بودم.
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="contact-me" class="container mb-5">
+        <form method="post">
+            {% csrf_token %}
+            <h4 class="fs-3">ارسال پیام</h4>
+            <div class="row mt-5">
+                <div class="col-12 col-md-6 mb-2">
+                    <input name="fullname" class="contant-input w-100" type="text" placeholder="نام و نام خانوادگی">
+                </div>
+                <div class="col-12 col-md-6 mb-2">
+                    <input name="title" class="contant-input w-100" type="text" placeholder="موضوع پیام">
+                </div>
+                <div class="col-12 col-md-12 mb-2">
+                    <input name="email" class="contant-input w-100" type="email" placeholder="ایمیل">
+                </div>
+                <div class="col-12 col-md-12 mb-2">
+                    <textarea class="contant-input w-100" name="message" id="" cols="30" rows="10" placeholder="متن پیام"></textarea>
+                </div>
+                <div class="col-12 col-md-12 mb-2">
+                    <button class="btn-contact" type="submit">ارسال</button>
+                </div>
+            </div>
+        </form>
+    </section>
 
     <!-- Bootstrap -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static './vendor/bootstrap/js/bootstrap.min.js' %}"></script>
     <!-- Font Awesome -->
-    <script src="../vendor/fontawesome/js/all.min.js"></script>
-    <!-- My Scripts -->
-    <script src="../js/script.js"></script>
+    <script src="{% static './vendor/fontawesome/js/all.min.js' %}"></script>
 </body>
 
 </html>
