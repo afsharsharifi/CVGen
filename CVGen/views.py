@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from CVGenMessages.models import UserMessage
+from CVGenBasicInfo.models import UserBasicInfo
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -27,5 +28,8 @@ def index(request):
             title=title,
             message=message
         )
-    context = {}
+    context = {
+        "number_of_users": User.objects.all().count(),
+        "number_of_resumes": UserBasicInfo.objects.all().count(),
+    }
     return render(request, "index.html", context)
