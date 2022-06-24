@@ -21,10 +21,13 @@ def user_skills(request):
             title=title,
             percentage=percentage
         )
-
+    try:
+        fullname = this_user_info.firstname + " " + this_user_info.lastname
+    except:
+        fullname = "پنل کاربری"
     context = {
         'user_skills': this_user_skills,
-        "fullname": this_user_info.firstname + " " + this_user_info.lastname
+        "fullname": fullname
     }
     return render(request, 'userpanel/skills.html', context)
 

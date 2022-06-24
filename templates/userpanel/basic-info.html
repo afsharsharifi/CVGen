@@ -44,7 +44,7 @@
             <button id="sidenav-controller" class="sidenav-button">
                 <i class="fa fa-bars"></i>
             </button>
-            <a href="#" class="text-black">
+            <a href="/r/{{ user }}" class="text-black" target="_blank">
                 <i class="fa fa-eye"></i>
                 <span>مشاهده رزونه من</span>
             </a>
@@ -105,34 +105,36 @@
                             <option value="3">Material CV</option>
                             <option value="4">Material Resume</option>
                             <option value="5">Right Resume</option>
-                            {% endif %}
-                            {% if user_info.template == "2" %}
+                            {% elif user_info.template == "2" %}
                             <option value="1">Creative CV</option>
                             <option value="2" selected>I’mRex</option>
                             <option value="3">Material CV</option>
                             <option value="4">Material Resume</option>
                             <option value="5">Right Resume</option>
-                            {% endif %}
-                            {% if user_info.template == "3" %}
+                            {% elif user_info.template == "3" %}
                             <option value="1">Creative CV</option>
                             <option value="2">I’mRex</option>
                             <option value="3" selected>Material CV</option>
                             <option value="4">Material Resume</option>
                             <option value="5">Right Resume</option>
-                            {% endif %}
-                            {% if user_info.template == "4" %}
+                            {% elif user_info.template == "4" %}
                             <option value="1">Creative CV</option>
                             <option value="2">I’mRex</option>
                             <option value="3">Material CV</option>
                             <option value="4" selected>Material Resume</option>
                             <option value="5">Right Resume</option>
-                            {% endif %}
-                            {% if user_info.template == "5" %}
+                            {% elif user_info.template == "5" %}
                             <option value="1">Creative CV</option>
                             <option value="2">I’mRex</option>
                             <option value="3">Material CV</option>
                             <option value="4">Material Resume</option>
                             <option value="5" selected>Right Resume</option>
+                            {% else %}
+                            <option value="1" selected>Creative CV</option>
+                            <option value="2">I’mRex</option>
+                            <option value="3">Material CV</option>
+                            <option value="4">Material Resume</option>
+                            <option value="5">Right Resume</option>
                             {% endif %}
                         </select>
                     </div>

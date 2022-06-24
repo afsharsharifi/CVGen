@@ -38,7 +38,6 @@ def show_resume(request, username):
         image = this_user_basicinfo.profile_image.url
     except:
         image = 'https://www.seekpng.com/png/detail/514-5147412_default-avatar-icon.png'
-    print("-------------------", image)
     context = {
         'profile_image': image,
         'user_baisc_info': this_user_basicinfo,

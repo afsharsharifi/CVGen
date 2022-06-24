@@ -8,7 +8,7 @@
 {% block content %}
 <section class="vh-100 d-flex align-items-center justify-content-center bg-light">
     <div class="login-wrapper">
-        <form method="post" class="d-flex flex-column align-items-center justify-content-between gap-4 p-3" action="/">
+        <form method="post" class="d-flex flex-column align-items-center justify-content-between gap-4 p-3">
             {% csrf_token %}
             <h4>ثبت نام کنید!</h4>
             {{ signup_form.username }}

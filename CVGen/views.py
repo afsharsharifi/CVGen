@@ -17,17 +17,17 @@ from django.contrib.auth.models import User
 
 
 def index(request):
-    if request.method == "POST":
-        fullname = request.POST.get('fullname')
-        title = request.POST.get('title')
-        message = request.POST.get('message')
+    # if request.method == "POST":
+    #     fullname = request.POST.get('fullname')
+    #     title = request.POST.get('title')
+    #     message = request.POST.get('message')
 
-        UserMessage.objects.create(
-            username=User.objects.first(),
-            fullname=fullname,
-            title=title,
-            message=message
-        )
+    #     UserMessage.objects.create(
+    #         username=User.objects.first(),
+    #         fullname=fullname,
+    #         title=title,
+    #         message=message
+    #     )
     context = {
         "number_of_users": User.objects.all().count(),
         "number_of_resumes": UserBasicInfo.objects.all().count(),

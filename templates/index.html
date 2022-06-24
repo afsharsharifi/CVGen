@@ -51,21 +51,27 @@
                             </li>
                         </ul>
                         <div class="d-flex">
-                            <button class="btn btn-outline-light" type="submit">
-                                <a href="/signup" class="text-white text-decoration-none">
-                                    همین الان یه رزومه بساز!
-                                </a>
-                            </button>
+                            {% if user.is_authenticated %}
+                            <a href="/userpanel/user-basic-info" class="text-decoration-none btn btn-outline-light">
+                                پنل کاربری
+                            </a>
+                            {% else %}
+                            <a href="/signup" class="text-decoration-none btn btn-outline-light">
+                                همین الان یه رزومه بساز!
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </nav>
             <div class="header-info d-flex flex-column align-items-center justify-content-center">
                 <h1 class="text-white fw-bold mb-lg-5 text-center">با سیویژن راحت رزومه بساز...!</h1>
+                {% if not user.is_authenticated %}
                 <div>
                     <a class="text-black text-decoration-none" href="/login">ورود</a>
                     <a class="text-black text-decoration-none" href="/signup">ثبت نام</a>
                 </div>
+                {% endif %}
             </div>
         </div>
     </header>

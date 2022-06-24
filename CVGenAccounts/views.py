@@ -7,28 +7,24 @@ from CVGenAccounts.forms import LoginForm, SignupForm
 
 
 def user_signup(request):
-    # if request.user.is_authenticated:
-    #     return redirect('/')
-
+    if request.user.is_authenticated:
+        return redirect('/')
     signup_form = SignupForm(request.POST or None)
     if signup_form.is_valid():
         username = signup_form.cleaned_data.get('username')
         email = signup_form.cleaned_data.get('email')
         password = signup_form.cleaned_data.get('password')
-
         User.objects.create_user(username=username, email=email, password=password)
         return redirect('/login')
     context = {
         'signup_form': signup_form
     }
-
     return render(request, 'accounts/signup.html', context)
 
 
 def user_login(request):
-    # if request.user.is_authenticated:
-    #     return redirect('/')
-
+    if request.user.is_authenticated:
+        return redirect('/')
     login_form = LoginForm(request.POST or None)
     if login_form.is_valid():
         username = login_form.cleaned_data.get('username')
@@ -38,8 +34,8 @@ def user_login(request):
             login(request, user)
         else:
             login_form.add_error('username', 'کاربری با این مشخصات یافت نشد!')
+        return redirect('userpanel/user-basic-info')
     context = {
         'login_form': login_form
     }
-
     return render(request, 'accounts/login.html', context)

@@ -28,24 +28,24 @@ TEMPLATE_CHOICES = (
 
 class UserBasicInfo(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
-    firstname = models.CharField(max_length=80)
-    lastname = models.CharField(max_length=80)
-    position = models.CharField(max_length=150)
-    birthyear = models.CharField(max_length=4)
-    email = models.EmailField()
-    mobile = models.CharField(max_length=11)
-    city = models.CharField(max_length=200)
-    template = models.CharField(max_length=40, choices=TEMPLATE_CHOICES, default='1')
-    about = models.TextField()
+    firstname = models.CharField(max_length=80, null=True, blank=True)
+    lastname = models.CharField(max_length=80, null=True, blank=True)
+    position = models.CharField(max_length=150, null=True, blank=True)
+    birthyear = models.CharField(max_length=4, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    mobile = models.CharField(max_length=11, null=True, blank=True)
+    city = models.CharField(max_length=200, null=True, blank=True)
+    template = models.CharField(max_length=40, choices=TEMPLATE_CHOICES, default=TEMPLATE_CHOICES[1])
+    about = models.TextField(null=True, blank=True)
     profile_image = models.ImageField(upload_to=upload_image_path_profiles, null=True, blank=True)
 
     # Social Media
-    instagram = models.CharField(max_length=400, default="")
-    telegram = models.CharField(max_length=400, default="")
-    whatsapp = models.CharField(max_length=400, default="")
-    github = models.CharField(max_length=400, default="")
-    gitlab = models.CharField(max_length=400, default="")
-    stackoverflow = models.CharField(max_length=400, default="")
+    instagram = models.CharField(max_length=400, default="", null=True, blank=True)
+    telegram = models.CharField(max_length=400, default="", null=True, blank=True)
+    whatsapp = models.CharField(max_length=400, default="", null=True, blank=True)
+    github = models.CharField(max_length=400, default="", null=True, blank=True)
+    gitlab = models.CharField(max_length=400, default="", null=True, blank=True)
+    stackoverflow = models.CharField(max_length=400, default="", null=True, blank=True)
 
     def __str__(self):
         return f"{self.username}"

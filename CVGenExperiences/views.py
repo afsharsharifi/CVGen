@@ -30,10 +30,13 @@ def user_experiences(request):
             start=start,
             end=end,
         )
-
+    try:
+        fullname = this_user_info.firstname + " " + this_user_info.lastname
+    except:
+        fullname = "پنل کاربری"
     context = {
         'user_experiences': this_user_experiences,
-        "fullname": this_user_info.firstname + " " + this_user_info.lastname
+        "fullname": fullname
     }
 
     return render(request, 'userpanel/experiences.html', context)

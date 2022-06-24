@@ -23,6 +23,12 @@ def user_basic_info(request):
         template = request.POST.get('select-template')
         about = request.POST.get('about')
         profile_image = request.FILES.get('profile_image')
+        instagram = request.POST.get('instagram_id')
+        telegram = request.POST.get('telegram_id')
+        whatsapp = request.POST.get('whtasapp_id')
+        github = request.POST.get('github_id')
+        gitlab = request.POST.get('gitlab_id')
+        stackoverflow = request.POST.get('stackoverflow_id')
 
         if this_user_info:
             this_user_info.firstname = firstname
@@ -35,6 +41,12 @@ def user_basic_info(request):
             this_user_info.template = template
             this_user_info.about = about
             this_user_info.profile_image = profile_image
+            this_user_info.instagram = instagram
+            this_user_info.telegram = telegram
+            this_user_info.whatsapp = whatsapp
+            this_user_info.github = github
+            this_user_info.gitlab = gitlab
+            this_user_info.stackoverflow = stackoverflow
             this_user_info.save()
         else:
             UserBasicInfo.objects.create(
@@ -49,11 +61,21 @@ def user_basic_info(request):
                 template=template,
                 about=about,
                 profile_image=profile_image,
+                instagram=instagram,
+                telegram=telegram,
+                whatsapp=whatsapp,
+                github=github,
+                gitlab=gitlab,
+                stackoverflow=stackoverflow,
             )
+    try:
+        fullname = this_user_info.firstname + " " + this_user_info.lastname
+    except:
+        fullname = "پنل کاربری"
 
     context = {
         'user_info': this_user_info,
-        "fullname": this_user_info.firstname + " " + this_user_info.lastname
+        "fullname": fullname
     }
 
     return render(request, 'userpanel/basic-info.html', context)

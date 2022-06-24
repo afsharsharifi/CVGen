@@ -26,10 +26,13 @@ def user_projects(request):
             link=link,
             description=description
         )
-
+    try:
+        fullname = this_user_info.firstname + " " + this_user_info.lastname
+    except:
+        fullname = "پنل کاربری"
     context = {
         'user_projects': this_user_projects,
-        "fullname": this_user_info.firstname + " " + this_user_info.lastname
+        "fullname": fullname
     }
     return render(request, 'userpanel/projects.html', context)
 
