@@ -1,0 +1,38 @@
+.main-header {
+    height: 60vh;
+    background-image: url('https://themes.lucky-roo.com/berg-v3.4/html/assets/demo/bg-home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inner-header {
+    height: 60vh;
+    background-color: rgba(125, 125, 125, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image img {
+    width: 250px;
+    border-radius: 50%;
+}
+
+.contant-input {
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid grey;
+}
+
+.contant-input::placeholder {
+    text-align: right;
+}
+
+.btn-contact{
+    background-color: gray;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+}

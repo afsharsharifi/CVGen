@@ -1,4 +1,5 @@
 @import url('fonts.css');
+
 header {
     height: 100vh;
     background-image: url("https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/788444/0918-effective-landing-page-design-Waldek_Social-586ce09530088e192f28b88a0e600227.png");
@@ -16,7 +17,7 @@ header {
     height: 600px;
 }
 
-.header-info button {
+.header-info a {
     background-color: #FFF;
     color: #000;
     border-radius: 30px;
@@ -24,7 +25,7 @@ header {
     padding: 10px 30px;
 }
 
-.header-info button:hover {
+.header-info a:hover {
     background-color: #EEE;
 }
 
