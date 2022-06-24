@@ -12,7 +12,7 @@
         <div class="profile-info d-flex justify-content-around align-items-center border-bottom mb-3">
             <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" alt="">
             <div class="pt-3">
-                <p class="fs-5 text-white">افشار شریفی</p>
+                <p class="fs-5 text-white">{{ fullname }}</p>
             </div>
             <button id="responsive-sidenav-btn" href="#" class="index500 text-white border-0 bg-transparent d-none"><i class="fas fa-times"></i></button>
         </div>
@@ -97,8 +97,7 @@
                         <div class="progress-bar bg-gradient" role="progressbar" style="width: {{ skill.percentage }}%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ skill.percentage }}%</div>
                     </div>
                     <div>
-                        <button class="btn-action bg-primary"><i class="fa fa-pen"></i></button>
-                        <button class="btn-action bg-danger"><i class="fa fa-trash"></i></button>
+                        <a href="/userpanel/del-skills/{{ skill.id }}" class="btn-action bg-danger"><i class="fa fa-trash"></i></a>
                     </div>
                 </div>
                 {% endfor %}

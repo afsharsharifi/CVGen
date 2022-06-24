@@ -9,4 +9,4 @@ class UserSkill(models.Model):
     percentage = models.IntegerField()
 
     def __str__(self):
-        return self.username
+        return f"{self.username}"

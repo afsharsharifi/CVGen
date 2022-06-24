@@ -19,7 +19,7 @@
         <div class="profile-info d-flex justify-content-around align-items-center border-bottom mb-3">
             <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" alt="">
             <div class="pt-3">
-                <p class="fs-5 text-white">افشار شریفی</p>
+                <p class="fs-5 text-white">{{ fullname }}</p>
             </div>
             <button id="responsive-sidenav-btn" href="#" class="index500 text-white border-0 bg-transparent d-none"><i class="fas fa-times"></i></button>
         </div>
@@ -131,6 +131,7 @@
                         </span>
                         بودم
                     </h4>
+                    <a href="/userpanel/del-ex/{{ exp.id }}" class="btn-action bg-danger"><i class="fa fa-trash"></i></a>
                 </div>
                 {% endfor %}
             </div>

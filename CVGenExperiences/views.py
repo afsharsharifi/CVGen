@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.http import Http404
+from django.shortcuts import redirect, render
 
 from CVGenExperiences.models import UserExperience
+from CVGenBasicInfo.models import UserBasicInfo
 
 from django.contrib.auth.models import User
 
@@ -11,6 +13,7 @@ def user_experiences(request):
     user_id = request.user.id
     user = User.objects.get(id=user_id)
     this_user_experiences = UserExperience.objects.filter(username=user)
+    this_user_info = UserBasicInfo.objects.filter(username=user).first()
 
     if request.method == "POST":
         name = request.POST.get('place-name')
@@ -29,7 +32,20 @@ def user_experiences(request):
         )
 
     context = {
-        'user_experiences': this_user_experiences
+        'user_experiences': this_user_experiences,
+        "fullname": this_user_info.firstname + " " + this_user_info.lastname
     }
 
     return render(request, 'userpanel/experiences.html', context)
+
+
+def delete_this_ex(request, id):
+    user_id = request.user.id
+    user = User.objects.get(id=user_id)
+    try:
+        this_skill = UserExperience.objects.get(id=id, username=user)
+        this_skill.delete()
+    except:
+        raise Http404()
+
+    return redirect("/userpanel/user-experiences")

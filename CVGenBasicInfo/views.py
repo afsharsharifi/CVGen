@@ -52,7 +52,8 @@ def user_basic_info(request):
             )
 
     context = {
-        'user_info': this_user_info
+        'user_info': this_user_info,
+        "fullname": this_user_info.firstname + " " + this_user_info.lastname
     }
 
     return render(request, 'userpanel/basic-info.html', context)
